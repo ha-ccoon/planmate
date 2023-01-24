@@ -1,4 +1,25 @@
 #!/usr/bin/env node
+const dotenv = require('dotenv');
+dotenv.config();
+
+//@ database
+const mongoose = require('mongoose');
+mongoose.set('strictQuery', true);
+// mongoose.Promise = global.Promise; // Node 의 네이티브 Promise 사용
+mongoose.connect('mongodb://localhost:27017/', () =>
+  console.log('Successfully connected to mongodb')
+);
+
+// mongoose
+//   .connect(process.env.MONGO_URI, {
+//     useMongoClient: true,
+//   })
+//   .then((response) => {
+//     console.log('Successfully connected to mongodb');
+//   })
+//   .catch((e) => {
+//     console.error(e);
+//   });
 
 /**
  * Module dependencies.
@@ -12,7 +33,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.port || '3000');
 app.set('port', port);
 
 /**
@@ -25,7 +46,7 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, () => console.log('Planmate is listening to port 3000'));
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -58,9 +79,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -83,8 +102,6 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
+  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
