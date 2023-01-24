@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    width: 100%;
+    background-color: #E1EAF4;
+}
+
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-btn {
+    margin: 15px 50px;
+}
+
+header .header-btn #logo-img {
+    width: 100px;
+    height: 25px;
+}
+
+header .header-btn #logout-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    background-color: #8b9fb7;
+    color: #E0E8F2;
+}
+
+main #content-holder {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    margin: 100px 200px;
+}
+
+main .content-box {
+    width: 700px;
+    height: 700px;
+    border: 1px solid #262C3D;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+main .content-box #material-holder {
+    padding: 20px;
+}
+
+/* main .content-box #material-holder nav{
+
+} */
+
+main .content-box nav ul{
+    padding: 20px 50px;
+    display: flex;
+    background-color: #8b9fb7;
+}
+
+main .content-box nav li{
+    padding: 0 100px;
+    width: 100px;
+    color: #E0E8F2;
+    text-align: center;
+}
+
+main .content-box .diary-contents {
+    margin: 40px auto;
+    border: 1px solid;
+    width: 85%;
+    height: 85%;
+}
+
+main .content-box .diary-contents #diary-feed {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+main .content-box .diary-contents .diary-date {
+    padding: 0 20px;
+    font-weight: bold;
+}
+
+main .content-box .diary-contents .diary {
+    display: flex;
+    margin: 12px 40px;
+    padding: 8px 5px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    width: calc(fit-content+10px);
+}
+
+main .content-box .diary-contents .diary #feelingcon {
+    padding: 5px 30px 5px 15px;
+}
