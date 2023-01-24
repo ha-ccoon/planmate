@@ -7,8 +7,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 //@ database
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/');
+
 
 //@ routers
 const indexRouter = require('./src/routes/index');
