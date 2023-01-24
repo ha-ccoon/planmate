@@ -6,9 +6,6 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
-//@ database
-
-
 //@ routers
 const indexRouter = require('./src/routes/index');
 const usersRouter = require('./src/routes/users');
@@ -45,5 +42,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 module.exports = app;
