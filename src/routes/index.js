@@ -7,16 +7,15 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
-//@ localhost:3000/login
-router.get('/login', (req, res) => {
-  res.render('login');
-});
-router.post('/login', )
-
 //@ localhost:3000/register
 router.get('/register', (req, res) => {
   res.render('register');
 });
-router.post('/register', )
+router.post('/register');
+
+//@ localhost:3000/main
+router.get('/main', (req, res) => {
+  res.render('main');
+});
 
 module.exports = router;

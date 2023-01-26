@@ -4,9 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planmate</title>
+    <title>Login</title>
   </head>
   <body>
-    <h1>Welcome to Planmate</h1>
+    <h1>Welcome to Planmate!</h1>
+    <h2>Sign in</h2>
+    <form action="/login" method="post">
+      <fieldset>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          autocomplete="on"
+        /><br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          autocomplete="off"
+        /><br />
+        <button type="button" id="login">Login</button><br />
+        <button type="button">Create Account</button><br />
+        <button type="button">Sign in with Google</button><br />
+        <a href="#">Forgot your Email or Password?</a>
+      </fieldset>
+    </form>
   </body>
 </html>

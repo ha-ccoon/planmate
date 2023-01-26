@@ -5,12 +5,16 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const session = require('express-session');
+
+const app = express();
 
 //@ routers
 const indexRouter = require('./src/routes/index');
-const usersRouter = require('./src/routes/users');
+const authRouter = require('./src/routes/passport/auth');
 
-const app = express();
+app.use('/', indexRouter);
+app.use('/', authRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, './src/views'));
@@ -24,8 +28,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+const passport = require('passport');
+const passportConfig = require('./src/public/javascripts/passport');
+
+//@ cookie config
+app.use(cookieParser(process.env.COOKIE_SECRET));
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: false,
+    secret: process.env.COOKIE_SECRET,
+    cookie: {
+      httpOnly: true,
+      secure: false,
+    },
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session()); // 해당 함수가 실행되면, 세션쿠키 정보를 바탕으로 deserializeUser() 실행
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -42,7 +63,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
 
 module.exports = app;
