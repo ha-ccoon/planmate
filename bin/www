@@ -2,24 +2,21 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+const bcryptRouter = require('../src/public/javascripts/passport/bcrypt');
+
 //@ database
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
-// mongoose.Promise = global.Promise; // Node 의 네이티브 Promise 사용
-mongoose.connect('mongodb://localhost:27017/', () =>
-  console.log('Successfully connected to mongodb')
-);
+mongoose.Promise = global.Promise; // Node 의 네이티브 Promise 사용
 
-// mongoose
-//   .connect(process.env.MONGO_URI, {
-//     useMongoClient: true,
-//   })
-//   .then((response) => {
-//     console.log('Successfully connected to mongodb');
-//   })
-//   .catch((e) => {
-//     console.error(e);
-//   });
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then((response) => {
+    console.log('Successfully connected to mongodb');
+  })
+  .catch((e) => {
+    console.error(e);
+  });
 
 /**
  * Module dependencies.
