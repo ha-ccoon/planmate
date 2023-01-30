@@ -8,10 +8,10 @@
   </head>
   <body>
     <h1>Register</h1>
-    <form action="/register" method="post">
+    <form action="/register" method="POST">
       <fieldset>
-        <input type="text" name="username" placeholder="Username" /><br />
-        <input type="password" name="password" placeholder="password" /><br />
+        <input type="text" name="email" placeholder="Email" /><br />
+        <input type="password" name="password" placeholder="Password" /><br />
         <input
           type="password"
           name="passwordConfirm"
@@ -25,6 +25,9 @@
         </div>
         <!-- 국가코드 -->
         <input type="tel" placeholder="Phone Number" /><br />
+        <label for="birthDay">Date of Birth</label><br />
+        <input type="date" name="birthDay" />
+        <button type="submit">Register</button>
       </fieldset>
     </form>
   </body>

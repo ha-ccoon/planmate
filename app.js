@@ -11,10 +11,12 @@ const app = express();
 
 //@ routers
 const indexRouter = require('./src/routes/index');
-const authRouter = require('./src/routes/passport/auth');
+const logInOutRouter = require('./src/routes/passport/logInOut');
+const registerRouter = require('./src/routes/passport/register');
 
 app.use('/', indexRouter);
-app.use('/', authRouter);
+app.use('/', logInOutRouter);
+app.use('/', registerRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, './src/views'));
@@ -29,7 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 const passport = require('passport');
-const passportConfig = require('./src/public/javascripts/passport');
+// const passportConfig = require('./src/public/javascripts/passport');
 
 //@ cookie config
 app.use(cookieParser(process.env.COOKIE_SECRET));

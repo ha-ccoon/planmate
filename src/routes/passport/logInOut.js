@@ -1,11 +1,11 @@
-//@ 회원가입, 로그인, 로그아웃 처리를 담당
+//@ 로그인, 로그아웃 처리를 담당
 //@ 클라이언트에서 로그인 요청이 들어오면 passport 폴더로 인증을 요청한다.
 'use strict';
 const express = require('express');
 const passport = require('passport');
-const LocalStrategy = require('passport-local');
+// const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
-const { isLoggedIn, isNotLoggedIn } = require('./middleware');
+const { isLoggedIn, isNotLoggedIn } = require('./logInStatus');
 
 const router = express.Router();
 
@@ -31,6 +31,13 @@ router.post('/index', isNotLoggedIn, (req, res, next) => {
       return res.redirect('/main');
     });
   })(req, res, next); //^ 미들웨어를 계속 실행시키기 위해서 붙임
+});
+
+//@ 로그아웃 요청
+router.get('/logout', isLoggedIn, (req, res) => {
+  req.logout();
+  req.session.destroy(); // 세션쿠지 삭제
+  res.redirect('/index');
 });
 
 module.exports = router;
