@@ -26,7 +26,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git@kdt-gitlab.elice.io:kikiki/planmate-webproject.git"
+    "url": "git@github.com:Skylotus0206/planmate.git"
   },
   "author": "",
   "license": "ISC",
