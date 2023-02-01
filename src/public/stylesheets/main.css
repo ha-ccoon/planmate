@@ -35,38 +35,39 @@ header .header-btn #logout-btn {
 }
 
 main #content-holder {
-  display: flex;
-  align-content: center;
-  justify-content: space-evenly;
-  margin: 100px 200px;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 25px;
+  margin: 100px auto;
 }
 
 main .content-box {
-  width: 700px;
+  width: 70%;
   height: 700px;
-  border: 1px solid #262c3d;
+  border: 1px solid #262C3D;
   border-radius: 5px;
   overflow: hidden;
 }
 
-main .content-box #material-holder {
-  padding: 20px;
+main #content-holder #calender-holder {
+  justify-self: right;
 }
 
-/* main .content-box #material-holder nav{
+main #content-holder #material-holder {
+  justify-self: left;
+}
 
-} */
-
-main .content-box nav ul {
+main .content-box nav ul{
   padding: 20px 50px;
   display: flex;
   background-color: #8b9fb7;
 }
 
-main .content-box nav li {
+main .content-box nav li{
   padding: 0 100px;
   width: 100px;
-  color: #e0e8f2;
+  color: #E0E8F2;
   text-align: center;
 }
 
@@ -84,7 +85,7 @@ main .content-box .diary-contents #diary-feed {
 }
 
 main .content-box .diary-contents .diary-date {
-  padding: 0 20px;
+  padding: 10px 20px 0;
   font-weight: bold;
 }
 
@@ -92,7 +93,7 @@ main .content-box .diary-contents .diary {
   display: flex;
   margin: 12px 40px;
   padding: 8px 5px;
-  background-color: aquamarine;
+  background-color: #e0e8fe;
   border-radius: 10px;
   width: calc(fit-content+10px);
 }

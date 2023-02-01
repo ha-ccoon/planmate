@@ -10,8 +10,8 @@
       rel="shortcut icon"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./main.css" />
-    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="./stylesheets/main.css" />
+    <link rel="stylesheet" href="./stylesheets/calendar.css" />
 
 
     <!-- 캘린더 -->
@@ -24,10 +24,10 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
     <!-- fullcalendar 언어 CDN -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
-
-
   </head>
+
   <body>
+    <!-- 최상단 헤더 (로고 / 로그아웃 버튼) -->
     <header>
       <nav id="header">
         <div class="header-btn">
@@ -41,11 +41,12 @@
 
     <main>
       <div id="content-holder">
+        <!-- 좌측 캘린더 div -->
         <div class="content-box" id="calender-holder">
 
           <div id='calendar'></div>
         </div>
-
+        <!-- 우측 머테리얼 div -->
         <div class="content-box" id="material-holder">
           <div class="diary" id="diary-feed">
             <nav>
