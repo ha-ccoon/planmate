@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 //@ localhost:3000
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   res.render('index');
 });
 

@@ -1,4 +1,5 @@
 'use strict';
+const dotenv = require('dotenv');
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -6,17 +7,18 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const passport = require('passport');
 
 const app = express();
+dotenv.config();
+
+// const passportConfig = require('./src/public/javascripts/passport');
+// passportConfig();
 
 //@ routers
 const indexRouter = require('./src/routes/index');
 const logInOutRouter = require('./src/routes/passport/logInOut');
 const registerRouter = require('./src/routes/passport/register');
-
-app.use('/', indexRouter);
-app.use('/', logInOutRouter);
-app.use('/', registerRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, './src/views'));
@@ -29,9 +31,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-const passport = require('passport');
-// const passportConfig = require('./src/public/javascripts/passport');
 
 //@ cookie config
 app.use(cookieParser(process.env.COOKIE_SECRET));
@@ -47,8 +46,13 @@ app.use(
   })
 );
 
+// app.use(session(express - session));
 app.use(passport.initialize());
-app.use(passport.session()); // 해당 함수가 실행되면, 세션쿠키 정보를 바탕으로 deserializeUser() 실행
+app.use(passport.session());
+
+app.use('/', indexRouter);
+app.use('/', logInOutRouter);
+app.use('/', registerRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
