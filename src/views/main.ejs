@@ -10,8 +10,9 @@
       rel="shortcut icon"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="/src/public/stylesheets/main.css" />
-    <link rel="stylesheet" href="/src/public/stylesheets/calendar.css" />
+    <link rel="stylesheet" href="./stylesheets/main.css" />
+    <link rel="stylesheet" href="./stylesheets/calendar.css" />
+    <script src="./javascripts/changeMenu.js" defer></script>
 
 
     <!-- 캘린더 -->
@@ -51,11 +52,12 @@
           <div class="diary" id="diary-feed">
             <nav>
               <ul>
-                <li>플랜</li>
-                <li>일기</li>
+                <li id="plan-btn">플랜</li>
+                <li id="diary-btn">일기</li>
               </ul>
             </nav>
-            <div class="plan">
+
+            <div class="plan" id="plan-contents">
               <p>목표</p>
               <div>
                 <form id="create">
@@ -72,7 +74,9 @@
                 </ol>
               </div>
             </div>
-            <div class="diary-contents">
+
+            <div class="diary-contents" id="diary-contents">
+              <button class="add-material" id="add-diary">+</button>
               <p id="diary-feed">피드</p>
               <p class="diary-date">2023.01.24(화)</p>
               <ol>
@@ -86,7 +90,7 @@
         </div>
       </div>
 
-      <script src="javascripts/calendar.js"></script>
+      <script src="../public/javascripts/calendar.js"></script>
 
     </main>
   </body>
