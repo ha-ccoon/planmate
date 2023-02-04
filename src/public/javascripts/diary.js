@@ -1,0 +1,1 @@
+const diaryDiv = document.getElementById('diary-contents');
