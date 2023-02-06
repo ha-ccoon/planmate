@@ -62,25 +62,16 @@
                 <li id="diary-btn">일기</li>
               </ul>
             </nav>
-
-            <div class="plan" id="plan-contents">
-              <p>목표</p>
-              <input type="date" />
-              <div>
-                <form id="create">
-                  <input type="text" />
-                  <button type="submit">등록</button>
-                </form>
-                <ol id="todoList">
-                  <li class="completed">
-                    <input type="checkbox" class="check" />
-                    <span>오늘의 할일</span>
-                    <button type="button" class="complete">완료</button>
-                    <button type="button" class="remove">삭제</button>
-                  </li>
-                </ol>
+            <div class="plan">
+              <p>PLAN</p>
+              <input type="date"/>
+              <span></span>
+              <input id="inputField" type="text" id="planText"/>
+              <button id="addButton">추가</button>
+              <div class="planList" id="planList">
+                <!-- id=inputField에 할 일 입력 후 +버튼이 눌리면 할일이 나타날 공간 -->
               </div>
-            </div>
+
 
             <div class="diary-contents" id="diary-contents">
 

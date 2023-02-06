@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // 제거하기 버튼
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "삭제";
+      // 수정기기 버튼
+      const editButton = document.createElement("button");
+      editButton.textContent = "수정";
 
       text.textContent = input.value;
       input.value = "";
