@@ -54,9 +54,9 @@
   border-radius: 20px;
   border: none;
 
-  background-color: rgba(255, 255, 255, 0.452);
+  background-color: rgba(#aac9df, 0.452);
 }
 
 .plan > #addButton:hover {
-  background-color: rgba(255, 255, 255, 0.607);
+  background-color: rgba(#aac9df);
 }

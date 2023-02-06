@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./stylesheets/plan.css" />
     <script src="./javascripts/changeMenu.js" defer></script>
     <script src="./javascripts/addDiary.js" defer></script>
-    <script src="../public/javascripts/plan.js" defer></script>
+    <script src="./javascripts/plan.js" defer></script>
 
 
     <!-- 캘린더 -->
@@ -58,11 +58,15 @@
         <div class="content-box" id="material-holder">
           <div class="diary" id="diary-feed">
             <nav>
+              <div class="contentBoxHeader">
               <ul>
                 <li id="plan-btn">플랜</li>
                 <li id="diary-btn">일기</li>
               </ul>
+              </div>
             </nav>
+
+            <!-- 플랜 -->
             <div class="plan">
               <input type="date"/>
               <span></span>
