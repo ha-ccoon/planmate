@@ -3,7 +3,6 @@
 .plan {
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
   padding: 0 0 0 0;
   margin: 0 0 0 0;
   display: flex;
@@ -13,7 +12,8 @@
 }
 
 .plan > input {
-  width: 50%;
+  margin: 10px 0 0 0;
+  width: 70%;
   height: 20px;
 
   padding: 0 10px;
@@ -27,9 +27,25 @@
   text-align: center;
 }
 
-.plan > input:focus {
-  outline: none;
+.plan > .planAdd {
+  margin: 15px;
+  width: 70%;
+  height: 620px;
+
+  padding: 0 10px;
+
+  background-color: transparent;
+
+  border: none;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+
+  text-align: center;
 }
+
+/* .plan > input:focus {
+  outline: none;
+} */
 
 .plan > #addButton {
   height: 20px;

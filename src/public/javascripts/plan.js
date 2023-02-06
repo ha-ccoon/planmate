@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // 제거하기 버튼
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "삭제";
-      // 수정기기 버튼
+      // 수정하기 버튼
       const editButton = document.createElement("button");
       editButton.textContent = "수정";
 
@@ -26,12 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
       item.appendChild(checkbox);
       item.appendChild(text);
       item.appendChild(deleteButton);
+      item.appendChild(editButton);
       todoList.appendChild(item);
 
       // 체크박스 이벤트 리스너
       checkbox.addEventListener("change", (event) => {
         if (event.currentTarget.checked) {
-          text.style.textDecoration = "line-through";
+          // text.style.textDecoration = "line-through";
+          //목록을 가장 밑으로 이동
         } else {
           text.style.textDecoration = "none";
         }
@@ -50,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 할 일 입력창에서 enter key가 눌렸을 때
   input.addEventListener("keypress", (event) => {
-    const ENTER = 13;
+    const ENTER = 13; //enter의 keycode가 13
     if (event.keyCode === ENTER) addTodo();
   });
 });

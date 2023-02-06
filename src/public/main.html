@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./stylesheets/plan.css" />
     <script src="./javascripts/changeMenu.js" defer></script>
     <script src="./javascripts/addDiary.js" defer></script>
+    <script src="../public/javascripts/plan.js" defer></script>
 
 
     <!-- 캘린더 -->
@@ -63,14 +64,16 @@
               </ul>
             </nav>
             <div class="plan">
-              <p>PLAN</p>
               <input type="date"/>
               <span></span>
-              <input id="inputField" type="text" id="planText"/>
-              <button id="addButton">추가</button>
-              <div class="planList" id="planList">
-                <!-- id=inputField에 할 일 입력 후 +버튼이 눌리면 할일이 나타날 공간 -->
+              <div class="planAdd">
+                <input type="text" id="planText"/>
+                <button id="addButton">추가</button>
+                <div class="planList" id="planList">
+                  <!-- id=inputField에 할 일 입력 후 +버튼이 눌리면 할일이 나타날 공간 -->
+                </div>
               </div>
+            </div>
 
 
             <div class="diary-contents" id="diary-contents">
