@@ -41,6 +41,8 @@
   border-radius: 20px;
 
   text-align: center;
+
+  overflow-y: auto;
 }
 
 /* .plan > input:focus {
