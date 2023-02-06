@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const input = document.querySelector("#inputField");
+  const input = document.querySelector("#planText");
   const addButton = document.querySelector("#addButton");
   const todoList = document.querySelector("#planList");
   const alert = document.querySelector("span");
@@ -39,13 +39,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
+      //수정하기
+      editButton.addEventListener("click", (event) => {
+        const editInput = document.createElement("input");
+        editInput.type = "text";
+        editInput.value = text.textContent;
+        item.replaceChild(editInput, text);
+        editInput.focus();
+        editInput.addEventListener("keypress", (event) => {
+          if (event.keyCode === 13) {
+            text.textContent = editInput.value;
+            item.replaceChild(text, editInput);
+          }
+        });
+      });
+
       // 제거하기 버튼 클릭 이벤트 리스너
       deleteButton.addEventListener("click", (event) => {
         todoList.removeChild(event.currentTarget.parentNode);
       });
       input.value = "";
       alert.textContent = "";
-    } else alert.textContent = "할 일을 입력하세요!";
+    } else alert.textContent = "플랜이 입력되지 않았어요!";
   };
 
   addButton.addEventListener("click", addTodo);
