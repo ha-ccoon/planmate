@@ -10,8 +10,11 @@
       rel="shortcut icon"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="/src/public/stylesheets/main.css" />
-    <link rel="stylesheet" href="/src/public/stylesheets/calendar.css" />
+    <link rel="stylesheet" href="./stylesheets/main.css" />
+    <link rel="stylesheet" href="./stylesheets/diaryList.css" />
+    <link rel="stylesheet" href="./stylesheets/selectedDiary.css" />
+    <link rel="stylesheet" href="./stylesheets/calendar.css" />
+    <script src="./javascripts/changeMenu.js" defer></script>
 
 
     <!-- 캘린더 -->
@@ -51,12 +54,14 @@
           <div class="diary" id="diary-feed">
             <nav>
               <ul>
-                <li>플랜</li>
-                <li>일기</li>
+                <li id="plan-btn">플랜</li>
+                <li id="diary-btn">일기</li>
               </ul>
             </nav>
-            <div class="plan">
-              <p>목표</p>
+
+            <!-- 플랜 섹션 -->
+            <div class="plan" id="plan-contents">
+              <!-- <p>목표</p>
               <div>
                 <form id="create">
                   <input type="text" />
@@ -70,23 +75,39 @@
                     <button type="button" class="remove">삭제</button>
                   </li>
                 </ol>
+              </div> -->
+            </div>
+
+            <!-- 다이어리 섹션 -->
+            <div class="diary-contents" id="diary-contents">
+              <!-- 다이어리 목록 -->
+              <!-- <div class="diaryDiv" id="diary-list">
+                <button class="add-material" id="add-diary">+</button>
+                <p id="diary-feed">피드</p>
+                <p class="diary-date">2023.01.24(화)</p>
+                <ol>
+                  <li class="diary">
+                    <img id="feelingcon-list" src="./images/config-2.png" />
+                    <p>이경은의 일기</p>
+                  </li>
+                </ol>
+              </div>
+            </div> -->
+            <!-- 등록된 다이어리 세부 -->
+            <div class="diaryDiv" id="selected-diary">
+              <button class="close-btn" id="close-diary">x</button>
+              <p id="written-date">2022-01-02</p>
+              <image id="feelingcon" src="./images/config-2.png"></image>
+              <div id="comment-box">
+                <p id="comment">정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.</p>
+              </div>
+              <div id="edit-btn-contain">
+                <button class="diary-edit" id="modify-diary">수정하기</button>
+                <button class="diary-edit" id="delete-diary">삭제하기</button>
               </div>
             </div>
-            <div class="diary-contents">
-              <p id="diary-feed">피드</p>
-              <p class="diary-date">2023.01.24(화)</p>
-              <ol>
-                <li class="diary">
-                  <img id="feelingcon" src="./images/config-2.png" />
-                  <p>이경은의 일기</p>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <script src="javascripts/calendar.js"></script>
+      <script src="../public/javascripts/calendar.js"></script>
 
     </main>
   </body>

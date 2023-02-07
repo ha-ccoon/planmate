@@ -3,10 +3,21 @@
   padding: 0;
 }
 
+@media (max-width: 1020px) {
+}
+
+/* 반응형 웹 */
+/* @container (max-width : 500px) {
+  .contentBoxHeader {
+    font-size: 5px;
+  }
+} */
+
 li {
   list-style: none;
 }
 
+/* *****  HEADER  ***** */
 header {
   width: 100%;
   background-color: #e1eaf4;
@@ -34,70 +45,48 @@ header .header-btn #logout-btn {
   color: #e0e8f2;
 }
 
+/* *****  MAIN  ***** */
 main #content-holder {
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 25px;
-  margin: 100px auto;
+  margin: 50px auto;
 }
 
 main .content-box {
   width: 70%;
   height: 700px;
-  border: 1px solid #262C3D;
+  border: 1px solid #262c3d;
   border-radius: 5px;
-  overflow: hidden;
+  overflow: visible;
 }
 
+/* *****  CALENDER SECTION  ***** */
 main #content-holder #calender-holder {
   justify-self: right;
 }
 
+/* *****  MATERIAL SECTION  ***** */
 main #content-holder #material-holder {
   justify-self: left;
+  width: 82%;
+  height: 800px;
 }
 
-main .content-box nav ul{
+main .content-box nav ul {
   padding: 20px 50px;
   display: flex;
   background-color: #8b9fb7;
 }
 
-main .content-box nav li{
+main .content-box nav li {
   padding: 0 100px;
   width: 100px;
-  color: #E0E8F2;
+  color: #e0e8f2;
   text-align: center;
 }
 
-main .content-box .diary-contents {
-  margin: 40px auto;
-  border: 1px solid;
-  width: 85%;
-  height: 85%;
-}
-
-main .content-box .diary-contents #diary-feed {
-  font-size: 35px;
-  font-weight: bold;
-  margin-bottom: 40px;
-}
-
-main .content-box .diary-contents .diary-date {
-  padding: 10px 20px 0;
-  font-weight: bold;
-}
-
-main .content-box .diary-contents .diary {
-  display: flex;
-  margin: 12px 40px;
-  padding: 8px 5px;
-  background-color: #e0e8fe;
-  border-radius: 10px;
-  width: calc(fit-content+10px);
-}
-
-main .content-box .diary-contents .diary #feelingcon {
-  padding: 5px 30px 5px 15px;
+main .content-box nav li :hover {
+  color: #262c3d;
 }
