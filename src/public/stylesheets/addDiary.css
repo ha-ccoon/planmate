@@ -21,7 +21,7 @@
     text-align: center;
 }
 
-  .select-feeling {
+  #select-feeling {
     display: flex;
     justify-content: center;
   }

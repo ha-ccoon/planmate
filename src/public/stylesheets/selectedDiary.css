@@ -46,7 +46,18 @@
     justify-content: center;
 }
 
-.diary-edit {
+#modify-diary {
+    all: unset;
+    margin: 0 20px;
+    color: #262C3D;
+    text-align: center;
+    background-color: #E0E8F2;
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+}
+
+#delete-diary {
     all: unset;
     margin: 0 20px;
     color: #262C3D;
