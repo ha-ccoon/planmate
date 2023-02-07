@@ -13,9 +13,12 @@
     <link rel="stylesheet" href="./stylesheets/main.css" />
     <link rel="stylesheet" href="./stylesheets/diaryList.css" />
     <link rel="stylesheet" href="./stylesheets/selectedDiary.css" />
+    <link rel="stylesheet" href="./stylesheets/newdiary.css" />
     <link rel="stylesheet" href="./stylesheets/calendar.css" />
     <script src="./javascripts/changeMenu.js" defer></script>
     <script src="./javascripts/addDiary.js" defer></script>
+    <script src="./javascripts/diary.js" defer></script>
+    <script src="./javascripts/diaryList.js" defer></script>
 
 
     <!-- 캘린더 -->
@@ -84,20 +87,20 @@
 
               <!-- 다이어리 목록 -->
               <!-- <div class="diaryDiv" id="diary-list">
-                <button class="add-material" id="add-diary">+</button>
-                <p id="diary-feed">피드</p>
+                <button class="add-diary" id="add-diary">+</button>
+                <h1 class="diary-feed">피드</h1>
                 <p class="diary-date">2023.01.24(화)</p>
                 <ol>
                   <li class="diary">
-                    <img id="feelingcon-list" src="./images/config-2.png" />
-                    <p>이경은의 일기</p>
+                    <img class="feelingcon-list" src="./images/config-2.png" />
+                    <p class="diary-writer">이경은의 일기</p>
                   </li>
                 </ol>
               </div>
             </div> -->
 
             <!-- 등록된 다이어리 세부 -->
-            <div class="diaryDiv" id="selected-diary">
+            <!-- <div class="diaryDiv" id="selected-diary">
               <button class="close-btn" id="close-diary">x</button>
               <p id="written-date">2022-01-02</p>
               <image id="feelingcon" src="./images/config-2.png"></image>
@@ -108,9 +111,22 @@
                 <button class="diary-edit" id="modify-diary">수정하기</button>
                 <button class="diary-edit" id="delete-diary">삭제하기</button>
               </div>
-            </div>
-            
+            </div> -->
 
+            <!-- 새로운 다이어리 등록 -->
+            <!-- <div class="diaryDiv" id="new-diary">
+              <button class="close-btn" id="close-diary">x</button>
+              <p class="today-date">2022-01-02</p>
+              <div class="select-feeling">
+                <img class="choose-feeling" id="feel-love" src="./images/feel-love.png"></img>
+                <img class="choose-feeling" id="feel-happy" src="./images/feel-happy.png"></img>
+                <img class="choose-feeling" id="feel-notbad" src="./images/feel-notbad.png"></img>
+                <img class="choose-feeling" id="feel-sad" src="./images/feel-sad.png"></img>
+                <img class="choose-feeling" id="feel-angry" src="./images/feel-angry.png"></img>
+              </div>
+              <textarea type="text" class="write-diary" maxlength="180" spellcheck="false" required></textarea>
+              <button class="upload-diary">등록하기</button>
+            </div> -->
 
           </div>
         </div>
