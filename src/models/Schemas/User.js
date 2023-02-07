@@ -1,5 +1,6 @@
 'use strict';
-const { Schema } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 
 //@ 유저 정보 스키마
