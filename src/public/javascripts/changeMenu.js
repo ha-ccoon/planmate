@@ -1,3 +1,4 @@
+
 // //오퍼시티 값 변경으로 플랜/일기 내용 변경
 // const planBtn = document.getElementById('plan-btn');
 // const diaryBtn = document.getElementById('diary-btn');
@@ -16,4 +17,5 @@
 // }
 
 // planBtn.addEventListener('click', showPlan);
+
 // diaryBtn.addEventListener('click', showDiary);

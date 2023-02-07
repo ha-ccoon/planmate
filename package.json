@@ -10,6 +10,7 @@
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
     "cookie-parser": "~1.4.4",
+    "crypto": "^1.0.1",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
@@ -27,7 +28,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git@kdt-gitlab.elice.io:kikiki/planmate-webproject.git"
+    "url": "git@github.com:Skylotus0206/planmate.git"
   },
   "author": "",
   "license": "ISC",

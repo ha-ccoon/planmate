@@ -10,7 +10,7 @@ bcrypt.genSalt(saltRounds, function (err, salt) {
   } else {
     function abc(req, res) {
       const hashed = bcrypt.hash(plainPassword, saltRounds);
-      hashed.then(console.log(res));
+      hashed.then(console.log(hashed));
     }
   }
 });

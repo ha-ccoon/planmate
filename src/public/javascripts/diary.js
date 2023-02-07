@@ -1,3 +1,4 @@
+
 const planElem = document.querySelector('.plan');
 const diaryElem = document.getElementById('diary-contents');
 const diaryBtn = document.getElementById('diary-btn');
@@ -202,3 +203,4 @@ function showSelectedDiary() {
     goToListBtn= document.getElementById('close-diary');
     goToListBtn.addEventListener('click', listUp);
 }
+

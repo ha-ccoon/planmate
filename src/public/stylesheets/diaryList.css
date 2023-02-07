@@ -44,6 +44,7 @@ main .content-box #diary-contents {
     font-weight: bold;
   }
   
+
   main .content-box .diary-contents .diaryDiv ol .diary {
     display: flex;
     margin: 12px 40px;
