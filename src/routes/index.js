@@ -2,10 +2,15 @@
 const express = require('express');
 const { response } = require('../../app');
 const router = express.Router();
+
 const { User } = require('../models');
+const { Calendar } = require('../models');
+
 const crypto = require('crypto');
 const bcrypt = require('bcrypt');
+
 const { userInfo } = require('os');
+const { calendarInfo } = require('os');
 
 //@ localhost:3000
 router.get('/', (req, res) => {
@@ -39,6 +44,30 @@ router.post('/register', async (req, res) => {
   } catch (error) {
     console.log('please try again');
     res.redirect('/register');
+  }
+});
+
+//@ localhost:3000/calendar
+router.get('/calendar', (req, res) => {
+  res.render('calendar');
+});
+
+router.post('/calendar', async (req, res) => {
+  try {
+    const { title, date } =
+      req.body;
+    
+    const calendarInfo = await Calendar.create({
+      title,
+      date
+    });
+
+    // calendarInfo.save();
+    console.log('your Calendar is registered');
+    res.redirect('/');
+  } catch (error) {
+    console.log('please try again');
+    res.redirect('/calendar');
   }
 });
 
