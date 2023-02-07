@@ -1,0 +1,64 @@
+/* plan 파트*/
+
+.plan {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.plan > input {
+  margin: 10px 0 0 0;
+  width: 70%;
+  height: 20px;
+
+  padding: 0 10px;
+
+  background-color: transparent;
+
+  border: none;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+
+  text-align: center;
+}
+
+.plan > .planAdd {
+  margin: 15px;
+  width: 70%;
+  height: 620px;
+
+  padding: 0 10px;
+
+  background-color: transparent;
+
+  border: none;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+
+  text-align: center;
+
+  overflow-y: auto;
+}
+
+/* .plan > input:focus {
+  outline: none;
+} */
+
+.plan > #addButton {
+  height: 20px;
+  width: 6%;
+
+  border-radius: 20px;
+  border: none;
+
+  background-color: rgba(#aac9df, 0.452);
+}
+
+.plan > #addButton:hover {
+  background-color: rgba(#aac9df);
+}

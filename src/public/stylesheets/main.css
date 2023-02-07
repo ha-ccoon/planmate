@@ -3,9 +3,15 @@
   padding: 0;
 }
 
-@media (max-width: 1020px){
-
+@media (max-width: 1020px) {
 }
+
+/* 반응형 웹 */
+/* @container (max-width : 500px) {
+  .contentBoxHeader {
+    font-size: 5px;
+  }
+} */
 
 li {
   list-style: none;
@@ -51,7 +57,7 @@ main #content-holder {
 main .content-box {
   width: 70%;
   height: 700px;
-  border: 1px solid #262C3D;
+  border: 1px solid #262c3d;
   border-radius: 5px;
   overflow: visible;
 }
@@ -68,19 +74,19 @@ main #content-holder #material-holder {
   height: 800px;
 }
 
-main .content-box nav ul{
+main .content-box nav ul {
   padding: 20px 50px;
   display: flex;
   background-color: #8b9fb7;
 }
 
-main .content-box nav li{
+main .content-box nav li {
   padding: 0 100px;
   width: 100px;
-  color: #E0E8F2;
+  color: #e0e8f2;
   text-align: center;
 }
 
 main .content-box nav li :hover {
-  color: #262C3D;
+  color: #262c3d;
 }
