@@ -1,7 +1,7 @@
 'use strict';
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const bcrypt = require('bcrypt');
+const crypto = require('crypto');
 
 //@ 유저 정보 스키마
 const UserSchema = new Schema({
