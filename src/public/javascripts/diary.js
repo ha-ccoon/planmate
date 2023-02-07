@@ -1,3 +1,4 @@
+const planElem = document.querySelector('.plan');
 const diaryElem = document.getElementById('diary-contents');
 const diaryBtn = document.getElementById('diary-btn');
 let addDiaryBtn = document.getElementById('add-diary');
@@ -6,6 +7,7 @@ let goToListBtn= document.getElementById('close-diary');
 
 //다이어리 목록 띄우기 
 function listUp () {
+     planElem.innerHTML="";
     diaryElem.innerHTML="";
 
     //diaryDiv
