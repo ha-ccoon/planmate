@@ -17,7 +17,7 @@ dotenv.config();
 
 //@ routers
 const indexRouter = require('./src/routes/index');
-const logInOutRouter = require('./src/routes/passport/logInOut');
+// const logInOutRouter = require('./src/routes/passport/logInOut');
 const registerRouter = require('./src/routes/passport/register');
 
 // view engine setup
@@ -51,7 +51,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
-app.use('/', logInOutRouter);
+// app.use('/', logInOutRouter);
 app.use('/', registerRouter);
 
 // catch 404 and forward to error handler
@@ -69,7 +69,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
 
 module.exports = app;
