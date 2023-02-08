@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 
 const { User } = require('../models');
 const { Calendar } = require('../models');
+const { Diary } = require('../models');
 
 // const { userInfo } = require('os');
 const { calendarInfo } = require('os');
@@ -122,6 +123,55 @@ router.post('/calendar', async (req, res) => {
 router.get('/main', (req, res) => {
   res.render('main');
 });
+
+router.post('/main', (req, res, next) =>{ passport.authenticate('local', (err,user,info) => {
+  console.log('inside post /main callback')
+    req.login(user, async (err) => { 
+    try {
+      console.log("try")
+      const { writer, written_date, comment, feelingconURL } = req.body;
+      const diaryInfo = await Diary.create({
+        writer, //user.firstName
+        written_date, 
+        comment,
+        feelingconURL
+      });
+      console.log(passport.session()); //isLoggedIn,
+      diaryInfo.save();
+      console.log('diary 내용이 저장됨');
+    } catch (err) {
+      console.log('diary 저장 실패');
+    }
+})})(req, res, next)}
+  
+  )
+
+router.get('/checkauth', isNotLoggedIn, function(req, res){
+
+    res.status(200).json({
+        status: 'Login successful!'
+    });
+
+    console.log(req.isAuthenticated())
+});
+
+
+  // router.post('/main', (req, res, next) => {
+  //   console.log('Inside POST /login callback')
+  //   passport.authenticate('local', (err, user, info) => {
+  //     console.log('Inside passport.authenticate() callback');
+  //     // console.log(req.session.passport: ${JSON.stringify(req.session.passport)})
+  //     // console.log(req.user: ${JSON.stringify(req.user)})
+  //     req.login(user, (err) => {
+  //       console.log('Inside req.login() callback')
+  //       // console.log(req.session.passport: ${JSON.stringify(req.session.passport)})
+  //       // console.log(req.user: ${JSON.stringify(req.user)})
+  //       return res.send('You were authenticated & logged in!\n');
+  //     })
+  //   })(req, res, next);
+  // })
+
+
 
 //@ localhost:3000/logout
 router.get('/logout', (req, res) => {
