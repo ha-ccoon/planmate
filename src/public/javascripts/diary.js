@@ -1,5 +1,7 @@
+// import addTodo from "./plan";
 
 const planElem = document.querySelector('.plan');
+const planBtn = document.querySelector('#plan-btn');
 const diaryElem = document.getElementById('diary-contents');
 const diaryBtn = document.getElementById('diary-btn');
 let addDiaryBtn = document.getElementById('add-diary');
@@ -115,12 +117,14 @@ function addDiary () {
     textingArea.classList.add('write-diary');
     textingArea.maxLength= 180;
     textingArea.spellcheck= "false";
+    textingArea.name= 'comment';
 
     //등록하기
     const uploadBtn= document.createElement('button');
     uploadBtn.innerHTML= "등록하기";
     uploadBtn.classList.add('upload-diary');
-
+    uploadBtn.type= 'submit';
+    
     //append
     feelDiv.append(feel1);
     feelDiv.append(feel2);
@@ -203,5 +207,7 @@ function showSelectedDiary() {
     //리스트로 돌아가기
     goToListBtn= document.getElementById('close-diary');
     goToListBtn.addEventListener('click', listUp);
+    
+    planBtn.addEventListener('click',addTodo);
 }
 

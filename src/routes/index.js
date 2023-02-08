@@ -5,6 +5,7 @@ const router = express.Router();
 
 const { User } = require('../models');
 const { Calendar } = require('../models');
+const { Diary } = require('../models');
 
 const crypto = require('crypto');
 const bcrypt = require('bcrypt');
