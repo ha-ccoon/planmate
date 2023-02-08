@@ -9,12 +9,8 @@ const { Calendar } = require('../models');
 const crypto = require('crypto');
 const bcrypt = require('bcrypt');
 
-const { userInfo } = require('os');
+// const { userInfo } = require('os');
 const { calendarInfo } = require('os');
-
-const bcrypt = require('bcrypt');
-
-const { User } = require('../models');
 const { isLoggedIn, isNotLoggedIn } = require('./passport/logInStatus');
 
 //@ localhost:3000
@@ -28,13 +24,14 @@ router.post('/', isNotLoggedIn, (req, res, next) => {
     if (authError) {
       console.error(authError);
       console.log(authError);
-      const alert = console.log.bind(console);
-      // alert('가입되지 않은 회원입니다.');
       return next(authError); // 에러처리 미들웨어로 실행
     }
     if (!user) {
       console.log('password is not correct');
-      // return alert('비밀번호가 일치하지 않습니다');
+      // res.send("<script>alert('로그인 에러')</script>");
+      return res.render('alert', {
+        error: info.message,
+      });
     }
     // 로그인 성공. index 호출
     return req.login(user, (loginError) => {
@@ -88,12 +85,11 @@ router.get('/calendar', (req, res) => {
 
 router.post('/calendar', async (req, res) => {
   try {
-    const { title, date } =
-      req.body;
-    
+    const { title, date } = req.body;
+
     const calendarInfo = await Calendar.create({
       title,
-      date
+      date,
     });
 
     // calendarInfo.save();
