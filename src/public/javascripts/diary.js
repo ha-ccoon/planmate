@@ -36,6 +36,7 @@ function listUp () {
     //다이어리 리스트 li
     const diaryLi= document.createElement('li');
     diaryLi.classList.add('diary');
+    diaryLi.id= 'theDiary';
 
     //다이어리 기분 아이콘
     const feelingcon= document.createElement('img');

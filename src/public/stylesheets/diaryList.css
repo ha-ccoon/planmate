@@ -61,3 +61,15 @@ main .content-box #diary-contents {
     font-size: 15px;
     margin: auto 0;
   }
+
+  #theDiary {
+    cursor: pointer;
+  }
+
+  #add-diary {
+    cursor: pointer;
+  }
+
+  #close-diary {
+    cursor: pointer;
+  }
