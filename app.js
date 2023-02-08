@@ -8,9 +8,11 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
+const passportIndex = require('./src/public/javascripts/passport/index');
 
 const app = express();
 dotenv.config();
+passportIndex();
 
 // const passportConfig = require('./src/public/javascripts/passport');
 // passportConfig();
@@ -30,7 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 //@ cookie config
 app.use(cookieParser(process.env.COOKIE_SECRET));

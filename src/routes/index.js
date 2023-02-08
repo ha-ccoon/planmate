@@ -6,7 +6,6 @@ const bcrypt = require('bcrypt');
 
 const { User } = require('../models');
 const { isLoggedIn, isNotLoggedIn } = require('./passport/logInStatus');
-const passportPublic = require('../public/javascripts/passport/index');
 
 //@ localhost:3000
 router.get('/', (req, res) => {
@@ -19,12 +18,13 @@ router.post('/', isNotLoggedIn, (req, res, next) => {
     if (authError) {
       console.error(authError);
       console.log(authError);
-      alert('가입되지 않은 회원입니다.');
+      const alert = console.log.bind(console);
+      // alert('가입되지 않은 회원입니다.');
       return next(authError); // 에러처리 미들웨어로 실행
     }
     if (!user) {
       console.log('password is not correct');
-      return alert('비밀번호가 일치하지 않습니다');
+      // return alert('비밀번호가 일치하지 않습니다');
     }
     // 로그인 성공. index 호출
     return req.login(user, (loginError) => {
@@ -32,8 +32,8 @@ router.post('/', isNotLoggedIn, (req, res, next) => {
         console.error(loginError);
         return next(loginError);
       }
-      return res.redirect('/main');
       console.log('login success');
+      return res.redirect('/main');
     });
   })(req, res, next);
 });

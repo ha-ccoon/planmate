@@ -3,7 +3,7 @@
 const passport = require('passport');
 const local = require('./LocalStrategy'); // 로컬 서버 로그인
 const google = require('./google'); // 구글 로그인
-const User = require('../../../models/index');
+const { User } = require('../../../models');
 
 module.exports = () => {
   //@ 유저 정보를 직렬화(serialize)해서 session에 저장
