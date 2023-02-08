@@ -9,14 +9,9 @@ const { Calendar } = require('../models');
 const crypto = require('crypto');
 const bcrypt = require('bcrypt');
 
-const { userInfo } = require('os');
+// const { userInfo } = require('os');
 const { calendarInfo } = require('os');
-
-const bcrypt = require('bcrypt');
-
-const { User } = require('../models');
 const { isLoggedIn, isNotLoggedIn } = require('./passport/logInStatus');
-const passportPublic = require('../public/javascripts/passport/index');
 
 //@ localhost:3000
 router.get('/', (req, res) => {
@@ -29,12 +24,13 @@ router.post('/', isNotLoggedIn, (req, res, next) => {
     if (authError) {
       console.error(authError);
       console.log(authError);
-      alert('가입되지 않은 회원입니다.');
       return next(authError); // 에러처리 미들웨어로 실행
     }
     if (!user) {
       console.log('password is not correct');
-      return alert('비밀번호가 일치하지 않습니다');
+      return res.render('alert', {
+        error: info.message,
+      });
     }
     // 로그인 성공. index 호출
     return req.login(user, (loginError) => {
@@ -42,8 +38,8 @@ router.post('/', isNotLoggedIn, (req, res, next) => {
         console.error(loginError);
         return next(loginError);
       }
+      console.log('Login Success: ' + user.email);
       return res.redirect('/main');
-      console.log('login success');
     });
   })(req, res, next);
 });
@@ -58,11 +54,13 @@ router.post('/register', isNotLoggedIn, async (req, res) => {
     const { email, password, firstName, lastName, phoneNumber, birthDay } =
       req.body;
     // 기존 유저 확인 (중복 가입 방지)
-    const existedUser = await User.findOne({ where: { email } });
+    const existedUser = await User.findOne({ email: email });
     if (existedUser) {
       return res.redirect('/');
+      //@ 존재하는 유저입니다 알람띄우기
     }
     const hash = await bcrypt.hash(password, 12);
+
     const userInfo = await User.create({
       email,
       password: hash,
@@ -88,12 +86,11 @@ router.get('/calendar', (req, res) => {
 
 router.post('/calendar', async (req, res) => {
   try {
-    const { title, date } =
-      req.body;
-    
+    const { title, date } = req.body;
+
     const calendarInfo = await Calendar.create({
       title,
-      date
+      date,
     });
 
     // calendarInfo.save();
@@ -108,6 +105,24 @@ router.post('/calendar', async (req, res) => {
 //@ localhost:3000/main
 router.get('/main', (req, res) => {
   res.render('main');
+});
+
+//@ localhost:3000/logout
+// router.get('/logout', (req, res) => {
+//   res.render('logout');
+// });
+
+router.get('/logout', isLoggedIn, (req, res, next) => {
+  req.logout();
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    res.render('alert', {
+      logout: '로그아웃 되었습니다.',
+    });
+  });
+  console.log('로그아웃 되었습니다.');
 });
 
 module.exports = router;

@@ -2,9 +2,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-
-const bcryptRouter = require('../src/public/javascripts/passport/bcrypt');
-
 //@ database
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
