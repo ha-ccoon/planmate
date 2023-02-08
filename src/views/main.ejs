@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>플랜메이트</title>
     <link
-      href="./images/config-1.png"
+      href="https://i.imgur.com/K8B2Pvy.png"
       rel="shortcut icon"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./stylesheets/main" type="'text/css" />
-    <link rel="stylesheet" href="./stylesheets/diaryList.css" type="'text/css" />
-    <link rel="stylesheet" href="./stylesheets/selectedDiary.css" type="'text/css" />
-    <link rel="stylesheet" href="./stylesheets/addDiary.css" type="'text/css" />
-    <link rel="stylesheet" href="./stylesheets/calendar.css" type="'text/css" />
-    <script src="./javascripts/diary.js" defer></script>
+    <link rel="stylesheet" href="stylesheets/main.css" />
+    <link rel="stylesheet" href="stylesheets/diaryList.css" />
+    <link rel="stylesheet" href="stylesheets/selectedDiary.css" />
+    <link rel="stylesheet" href="stylesheets/addDiary.css" />
+    <link rel="stylesheet" href="stylesheets/calendar.css" />
+    <script src="javascripts/diary.js" defer></script>
 
 
     <!-- 캘린더 -->
@@ -35,7 +35,7 @@
     <header>
       <nav id="header">
         <div class="header-btn">
-          <img id="logo-img" src="./images/logo-en.png" alt="logo button" />
+          <img id="logo-img" src="images/logo-en.png" alt="logo button" />
         </div>
         <div class="header-btn">
           <button id="logout-btn">로그아웃</button>
@@ -56,27 +56,21 @@
             <nav>
               <ul>
                 <li id="plan-btn">플랜</li>
-                <li id="diary-btn">일기</li>
+                <li id="diary-btn">다이어리</li>
               </ul>
             </nav>
 
-            <!-- 플랜 섹션 -->
-            <div class="plan" id="plan-contents">
-              <!-- <p>목표</p>
-              <div>
-                <form id="create">
-                  <input type="text" />
-                  <button type="submit">등록</button>
-                </form>
-                <ol id="todoList">
-                  <li class="completed">
-                    <input type="checkbox" class="check" />
-                    <span>오늘의 할일</span>
-                    <button type="button" class="complete">완료</button>
-                    <button type="button" class="remove">삭제</button>
-                  </li>
-                </ol>
-              </div> -->
+            <!-- 플랜 -->
+            <div class="plan">
+              <input type="date"/>
+              <span></span>
+              <div class="planAdd">
+                <input type="text" id="planText"/>
+                <button id="addButton">추가</button>
+                <div class="planList" id="planList">
+                  <!-- id=inputField에 할 일 입력 후 +버튼이 눌리면 할일이 나타날 공간 -->
+                </div>
+              </div>
             </div>
 
             <!-- 다이어리 섹션 -->
@@ -95,7 +89,7 @@
               </div>
             </div> -->
             <!-- 등록된 다이어리 세부 -->
-            <div class="diaryDiv" id="selected-diary">
+            <!-- <div class="diaryDiv" id="selected-diary">
               <button class="close-btn" id="close-diary">x</button>
               <p id="written-date">2022-01-02</p>
               <image id="feelingcon" src="./images/config-2.png"></image>
@@ -106,9 +100,9 @@
                 <button class="diary-edit" id="modify-diary">수정하기</button>
                 <button class="diary-edit" id="delete-diary">삭제하기</button>
               </div>
-            </div>
+            </div> -->
 
-      <script src="../public/javascripts/calendar.js"></script>
+      <script src="javascripts/calendar.js"></script>
 
     </main>
   </body>

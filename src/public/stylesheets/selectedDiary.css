@@ -66,3 +66,7 @@
     height: 40px;
     border-radius: 30px;
 }
+
+#close-diary {
+    cursor: pointer;
+  }
