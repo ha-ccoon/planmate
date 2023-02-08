@@ -1,24 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const plan = document.getElementById(".plan");
   const input = document.querySelector("#planText");
   const addButton = document.querySelector("#addButton");
   const todoList = document.querySelector("#planList");
   const alert = document.querySelector("span");
 
-  // '+' 버튼 익명 화살표 함수
+  // '추가' 버튼 화살표 함수
   const addTodo = () => {
     if (input.value !== "") {
       const item = document.createElement("div");
       // 체크박스
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
+      checkbox.id = "checkbox";
       // text
       const text = document.createElement("span");
+      text.id = "text";
       // 제거하기 버튼
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "삭제";
+      deleteButton.id = "deleteButton";
       // 수정하기 버튼
       const editButton = document.createElement("button");
       editButton.textContent = "수정";
+      editButton.id = "editButton";
 
       text.textContent = input.value;
       input.value = "";
@@ -33,9 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
       checkbox.addEventListener("change", (event) => {
         if (event.currentTarget.checked) {
           // text.style.textDecoration = "line-through";
-          //목록을 가장 밑으로 이동
         } else {
           text.style.textDecoration = "none";
+          sort(); // 목록을 가장 밑으로 이동
         }
       });
 
