@@ -1,60 +1,60 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-
-  #new-diary {
-    margin: 25px auto;
-    align-self: center;
-  }
-
-  #close-diary {
-    all: unset;
-   float: right;
-   font-size: 30px;
-   color: #8b9fb7;
+  margin: 0;
+  padding: 0;
 }
 
-  .today-date {
-    margin: 0 auto;
-    padding: 50px 0;
-    text-align: center;
+#new-diary {
+  margin: 25px auto;
+  align-self: center;
 }
 
-  #select-feeling {
-    display: flex;
-    justify-content: center;
-  }
-
-  .choose-feeling {
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-  }
-
-  .write-diary {
-    display: block;
-    align-self: center;
-    margin: 60px auto;
-    background-color: white;
-    width: 90%;
-    height: 300px;
-    border: 1.5px solid #262C3D;
-    border-radius: 5px;
-    text-align: left;
-    font-size: 14px;
+#close-diary {
+  all: unset;
+  float: right;
+  font-size: 30px;
+  color: #8b9fb7;
 }
 
-  .upload-diary {
-    all: unset;
-    display: block;
-    margin: 0 auto;
-    color: #262C3D;
-    text-align: center;
-    background-color: #E0E8F2;
-    width: 100px;
-    height: 40px;
-    border-radius: 30px;
+.today-date {
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+}
+
+#select-feeling {
+  display: flex;
+  justify-content: center;
+}
+
+.choose-feeling {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+
+.write-diary {
+  display: block;
+  align-self: center;
+  margin: 60px auto;
+  background-color: white;
+  width: 90%;
+  height: 300px;
+  border: 1.5px solid #262c3d;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.upload-diary {
+  all: unset;
+  display: block;
+  margin: 0 auto;
+  color: #262c3d;
+  text-align: center;
+  background-color: #e0e8f2;
+  width: 100px;
+  height: 40px;
+  border-radius: 30px;
 }
 
 #close-diary {
