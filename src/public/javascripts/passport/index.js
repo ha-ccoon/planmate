@@ -1,8 +1,8 @@
 //@ 로그인이 성공했을 때,
 'use strict';
 const passport = require('passport');
-const local = require('./LocalStrategy'); // 로컬 서버 로그인
-const google = require('./google'); // 구글 로그인
+const local = require('./localStrategy'); // 로컬 서버 로그인
+const google = require('./googleStrategy'); // 구글 로그인
 const { User } = require('../../../models');
 
 module.exports = () => {
@@ -22,6 +22,7 @@ module.exports = () => {
   });
 
   local();
+  google();
 };
 
 // 보통 세션의 무게를 줄이기 위해, user의 id만 세션에 저장
