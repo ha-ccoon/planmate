@@ -1,13 +1,14 @@
 'use strict';
-const { Schema } = require('mongoose');
-const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+const crypto = require('crypto');
 
 //@ 유저 정보 스키마
 const UserSchema = new Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
-  firstName: String,
-  lastName: String,
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
   phoneNumber: Number,
   birthDay: Date,
   createdAt: {

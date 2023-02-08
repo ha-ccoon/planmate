@@ -10,10 +10,10 @@ main .content-box #diary-contents {
     width: 85%;
     height: 85%;
     border-radius: 5px;
-    opacity: 0;
+    /* opacity: 0; */
   }
   
-  main .content-box .diary-contents #add-diary {
+  main .content-box .diary-contents .add-diary {
     width: 60px;
     height: 60px;
     position: relative;
@@ -28,12 +28,12 @@ main .content-box #diary-contents {
     box-shadow: 2px 2px 10px 1px rgba(185, 188, 225, 0.5);
   }
   
-  /* main .content-box .diary-contents #add-diary :hover {
+  /* main .content-box .diary-contents .add-diary :hover {
     background-color: #8b9fb7;
     color: #262C3D;
   } */
   
-  main .content-box .diary-contents #diary-feed {
+  main .content-box .diary-contents .diary-feed {
     font-size: 35px;
     font-weight: bold;
     margin-bottom: 40px;
@@ -44,15 +44,21 @@ main .content-box #diary-contents {
     font-weight: bold;
   }
   
-  main .content-box .diary-contents .diary {
+
+  main .content-box .diary-contents .diaryDiv ol .diary {
     display: flex;
     margin: 12px 40px;
     padding: 8px 5px;
     background-color: #e0e8fe;
     border-radius: 10px;
-    width: calc(fit-content+10px);
+    width: calc(fit-content);
   }
   
-  main .content-box .diary-contents .diary #feelingcon-list {
+  main .content-box .diary-contents .diary .feelingcon-list {
     padding: 5px 30px 5px 15px;
+  }
+
+  main .content-box .diary-contents .diary-writer {
+    font-size: 15px;
+    margin: auto 0;
   }
