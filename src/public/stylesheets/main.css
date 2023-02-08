@@ -90,3 +90,11 @@ main .content-box nav li {
 main .content-box nav li :hover {
   color: #262c3d;
 }
+
+#plan-btn {
+  cursor: pointer;
+}
+
+#diary-btn {
+  cursor: pointer;
+}
