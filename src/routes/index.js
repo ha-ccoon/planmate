@@ -28,7 +28,6 @@ router.post('/', isNotLoggedIn, (req, res, next) => {
     }
     if (!user) {
       console.log('password is not correct');
-      // res.send("<script>alert('로그인 에러')</script>");
       return res.render('alert', {
         error: info.message,
       });
@@ -39,7 +38,7 @@ router.post('/', isNotLoggedIn, (req, res, next) => {
         console.error(loginError);
         return next(loginError);
       }
-      console.log('login success');
+      console.log('Login Success: ' + user.email);
       return res.redirect('/main');
     });
   })(req, res, next);
@@ -61,7 +60,7 @@ router.post('/register', isNotLoggedIn, async (req, res) => {
       //@ 존재하는 유저입니다 알람띄우기
     }
     const hash = await bcrypt.hash(password, 12);
-    
+
     const userInfo = await User.create({
       email,
       password: hash,
@@ -106,6 +105,24 @@ router.post('/calendar', async (req, res) => {
 //@ localhost:3000/main
 router.get('/main', (req, res) => {
   res.render('main');
+});
+
+//@ localhost:3000/logout
+// router.get('/logout', (req, res) => {
+//   res.render('logout');
+// });
+
+router.get('/logout', isLoggedIn, (req, res, next) => {
+  req.logout();
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    res.render('alert', {
+      logout: '로그아웃 되었습니다.',
+    });
+  });
+  console.log('로그아웃 되었습니다.');
 });
 
 module.exports = router;

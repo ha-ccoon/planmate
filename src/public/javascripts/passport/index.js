@@ -10,10 +10,11 @@ module.exports = () => {
   passport.serializeUser((user, done) => {
     // session에sms user.id만 저장하고 데이터는 deserializeUser로 전달
     done(null, user.id);
+    console.log('UserId saved in session: ' + user.id);
   });
 
-  //@ 클라이언트의 요청마다 세션정보를 실제 DB와 비교
   //@ serializeUser()가 done 호출 하거나, passport.session()이 실행될 때 실행
+  //@ 세션 ID 정보가필요할 때 항상 실행하여 이용
   passport.deserializeUser((id, done) => {
     User.findOne({ email: id })
       .then((user) => done(null, user)) // req.login 으로 돌아가 미들웨어 실행
