@@ -8,27 +8,32 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
+const passportIndex = require('./src/public/javascripts/passport/index');
 
 const app = express();
 dotenv.config();
+passportIndex();
 
 // const passportConfig = require('./src/public/javascripts/passport');
 // passportConfig();
 
 //@ routers
 const indexRouter = require('./src/routes/index');
-// const logInOutRouter = require('./src/routes/passport/logInOut');
 const registerRouter = require('./src/routes/passport/register');
+// const logInOutRouter = require('./src/routes/passport/logInOut');
 
 // view engine setup
 app.set('views', path.join(__dirname, './src/views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'src/public')));
 
@@ -51,8 +56,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
-// app.use('/', logInOutRouter);
 app.use('/', registerRouter);
+// app.use('/', logInOutRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
