@@ -6,7 +6,7 @@ const isLoggedIn = (req, res, next) => {
     next();
   } else {
     res.status(403).send('로그인이 필요 합니다.');
-    res.redirect('/');
+    res.redirect('/main');
     console.log('isLoggedIn error');
   }
 };
@@ -15,7 +15,7 @@ const isNotLoggedIn = (req, res, next) => {
   if (!req.isAuthenticated()) {
     next();
   } else {
-    res.redirect('/main');
+    res.redirect('/');
     console.log('isNotLoggedIn error');
   }
 };

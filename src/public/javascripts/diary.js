@@ -119,6 +119,11 @@ function addDiary () {
     textingArea.spellcheck= "false";
     textingArea.name= 'comment';
 
+    //post 전송을 위한 form 생성
+    const buttonForm = document.createElement('form');
+    buttonForm.action= '/main';
+    buttonForm.method="POST";
+
     //등록하기
     const uploadBtn= document.createElement('button');
     uploadBtn.innerHTML= "등록하기";
@@ -132,17 +137,20 @@ function addDiary () {
     feelDiv.append(feel4);
     feelDiv.append(feel5);
 
+    buttonForm.append(todayDate);
+    buttonForm.append(feelDiv);
+    buttonForm.append(textingArea);
+    buttonForm.append(uploadBtn);
+
     addDiaryDiv.append(backBtn);
-    addDiaryDiv.append(todayDate);
-    addDiaryDiv.append(feelDiv);
-    addDiaryDiv.append(textingArea);
-    addDiaryDiv.append(uploadBtn);
+    addDiaryDiv.append(buttonForm);
 
     diaryElem.append(addDiaryDiv);
 
     //리스트로 돌아가기
     goToListBtn= document.getElementById('close-diary');
     goToListBtn.addEventListener('click', listUp);
+    // uploadBtn.addEventListener('click', sendDiary);
 }
 
 //등록된 다이어리 세부
@@ -210,4 +218,8 @@ function showSelectedDiary() {
     
     planBtn.addEventListener('click',addTodo);
 }
+
+// function sendDiary () {
+//     alert('새로운 일기 등록 완료!')
+// }
 
