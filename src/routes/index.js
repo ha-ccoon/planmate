@@ -55,11 +55,13 @@ router.post('/register', isNotLoggedIn, async (req, res) => {
     const { email, password, firstName, lastName, phoneNumber, birthDay } =
       req.body;
     // 기존 유저 확인 (중복 가입 방지)
-    const existedUser = await User.findOne({ where: { email } });
+    const existedUser = await User.findOne({ email: email });
     if (existedUser) {
       return res.redirect('/');
+      //@ 존재하는 유저입니다 알람띄우기
     }
     const hash = await bcrypt.hash(password, 12);
+    
     const userInfo = await User.create({
       email,
       password: hash,
