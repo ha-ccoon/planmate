@@ -28,7 +28,7 @@ router.post('/', isNotLoggedIn, (req, res, next) => {
     }
     if (!user) {
       console.log('password is not correct');
-      return res.render('alert', {
+      return res.render('alerts/login', {
         error: info.message,
       });
     }
@@ -112,13 +112,12 @@ router.get('/main', (req, res) => {
 //   res.render('logout');
 // });
 
-router.get('/logout', isLoggedIn, (req, res, next) => {
-  req.logout();
+router.get('/logout', (req, res, next) => {
   req.logout(function (err) {
     if (err) {
       return next(err);
     }
-    res.render('alert', {
+    res.render('alerts/logout', {
       logout: '로그아웃 되었습니다.',
     });
   });

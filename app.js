@@ -11,16 +11,12 @@ const passport = require('passport');
 const passportIndex = require('./src/public/javascripts/passport/index');
 
 const app = express();
+
 dotenv.config();
 passportIndex();
 
-// const passportConfig = require('./src/public/javascripts/passport');
-// passportConfig();
-
 //@ routers
 const indexRouter = require('./src/routes/index');
-const registerRouter = require('./src/routes/passport/register');
-// const logInOutRouter = require('./src/routes/passport/logInOut');
 
 // view engine setup
 app.set('views', path.join(__dirname, './src/views'));
@@ -51,13 +47,10 @@ app.use(
   })
 );
 
-// app.use(session(express - session));
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
-app.use('/', registerRouter);
-// app.use('/', logInOutRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
