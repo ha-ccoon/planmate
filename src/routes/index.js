@@ -2,13 +2,11 @@
 const passport = require('passport');
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcrypt');
 
 const { User } = require('../models');
 const { Calendar } = require('../models');
 const { Diary } = require('../models');
-
-const crypto = require('crypto');
-const bcrypt = require('bcrypt');
 
 // const { userInfo } = require('os');
 const { calendarInfo } = require('os');
@@ -44,6 +42,24 @@ router.post('/', isNotLoggedIn, (req, res, next) => {
     });
   })(req, res, next);
 });
+
+//@ localhost:3000/google
+router.get(
+  '/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+
+// 위에서 구글 서버 로그인이 되면, 아래 로직 실행
+router.get(
+  '/google/callback',
+  passport.authenticate('google', {
+    successRedirect: '/main',
+    failureRedirect: '/',
+  }),
+  (req, res) => {
+    res.redirect('/');
+  }
+);
 
 //@ localhost:3000/register
 router.get('/register', (req, res) => {
@@ -158,20 +174,21 @@ router.get('/checkauth', isNotLoggedIn, function(req, res){
 
 
 //@ localhost:3000/logout
-// router.get('/logout', (req, res) => {
-//   res.render('logout');
-// });
+router.get('/logout', (req, res) => {
+  res.render('logout');
+});
 
-router.get('/logout', (req, res, next) => {
+router.get('/logout', isNotLoggedIn, (req, res, next) => {
   req.logout(function (err) {
     if (err) {
       return next(err);
     }
-    res.render('alerts/logout', {
-      logout: '로그아웃 되었습니다.',
-    });
   });
-  console.log('로그아웃 되었습니다.');
+  console.log('로그아웃 되었습니다. ');
 });
 
 module.exports = router;
+
+// res.render('alerts/logout', {
+//   logout: '로그아웃 되었습니다.',
+// });

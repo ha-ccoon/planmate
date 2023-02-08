@@ -4,12 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript">
+    const logout = confirm('로그아웃 되었습니다. 다시 사용해 주실꺼죠? :(');
+    if (logout == true) {
+      alert('오늘은 보내드릴께요! 감사합니다 :)')
+    } else {
+      alert('너무해...')
+    } 
+
+    history.pushState(null, null, location.href); 
+    window.onpopstate = function(event) { 
+      history.go(1); 
+    }
+  </script>
+
   <title>Document</title>
 </head>
 <body>
-  <form action="/logout" method="POST">
-    <h1>로그아웃 되었습니다.</h1>
-    <p>또 이용해 주실꺼죠? :(</p>
-    <button type="submit>다시 로그인 하기</button>
+  <form action="/logout" method="GET">
+    <h1>로그아웃 되었습니다. </h1>
+    <button type="button" onclick='location.href="/"'>메인화면으로 돌아가기</button>
   </form>
 </html>
+
+ <!-- <script>
+    
+  </> -->
