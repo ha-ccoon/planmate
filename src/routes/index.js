@@ -108,20 +108,21 @@ router.get('/main', (req, res) => {
 });
 
 //@ localhost:3000/logout
-// router.get('/logout', (req, res) => {
-//   res.render('logout');
-// });
+router.get('/logout', (req, res) => {
+  res.render('logout');
+});
 
-router.get('/logout', (req, res, next) => {
+router.get('/logout', isNotLoggedIn, (req, res, next) => {
   req.logout(function (err) {
     if (err) {
       return next(err);
     }
-    res.render('alerts/logout', {
-      logout: '로그아웃 되었습니다.',
-    });
   });
-  console.log('로그아웃 되었습니다.');
+  console.log('로그아웃 되었습니다. ');
 });
 
 module.exports = router;
+
+// res.render('alerts/logout', {
+//   logout: '로그아웃 되었습니다.',
+// });
