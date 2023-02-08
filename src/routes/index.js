@@ -5,6 +5,7 @@ const router = express.Router();
 
 const { User } = require('../models');
 const { Calendar } = require('../models');
+const { Diary } = require('../models');
 
 const crypto = require('crypto');
 const bcrypt = require('bcrypt');
@@ -12,9 +13,6 @@ const bcrypt = require('bcrypt');
 const { userInfo } = require('os');
 const { calendarInfo } = require('os');
 
-const bcrypt = require('bcrypt');
-
-const { User } = require('../models');
 const { isLoggedIn, isNotLoggedIn } = require('./passport/logInStatus');
 const passportPublic = require('../public/javascripts/passport/index');
 
