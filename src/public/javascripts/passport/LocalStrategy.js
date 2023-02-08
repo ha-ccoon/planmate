@@ -3,20 +3,11 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
-
-const User = require('../../../models/Schemas/User');
-
-//@ 비밀번호 암호화
-
-// function hashPassword(password) {
-//   return crypto
-//     .createHmac('sha256', process.env.SECRET_KEY)
-//     .update(password)
-//     .digest('hex');
-// }
+const User = require('../../../models');
 
 module.exports = () => {
   passport.use(
+    'local',
     new LocalStrategy(
       {
         usernameField: 'email',
@@ -48,9 +39,9 @@ module.exports = () => {
           } else {
             done(null, false, alert({ message: '가입되지 않은 회원입니다.' })); // done() 호출이 끝나면, 다시 라우터로 돌아가서 미들웨어 콜백 실행
           }
-        } catch (err) {
-          console.error(err);
-          done(err); // 무엇을 위한 에러인지 모르겠다
+        } catch (error) {
+          console.error(error);
+          done(error);
         }
       }
     )
