@@ -1,6 +1,14 @@
-/* plan 파트*/
+/* plan(main.ejs) 파트*/
 
 .plan {
+  width: 100%;
+  height: 100%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+
+.content-box > .plan {
   width: 100%;
   height: 100%;
   padding: 0 0 0 0;
@@ -11,67 +19,145 @@
   justify-content: center;
 }
 
-.plan > input {
-  margin: 10px 0 0 0;
-  width: 70%;
-  height: 20px;
-
-  padding: 0 10px;
-
-  background-color: transparent;
-
-  border: none;
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-
-  text-align: center;
-}
-
-.plan > .planAdd {
-  margin: 15px;
-  width: 70%;
-  height: 620px;
-
-  padding: 0 10px;
-
-  background-color: transparent;
-
-  border: none;
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
+.plan > #planDate {
+  width: 50%;
+  cursor: pointer;
+  margin: 20px;
+  border: 3px solid rgba(146, 168, 234, 0.3);
   border-radius: 20px;
 
   text-align: center;
 
-  overflow-y: auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: transparent;
 }
 
-/* .plan > input:focus {
+#planDate:focus {
   outline: none;
-} */
+}
+.plan > .planAdd {
+  height: 100%;
+  /* width: 85%;
 
-.plan > #addButton {
+  padding: 10px; */
+
+  background-color: transparent;
+
+  border-top: 3px dotted rgba(0, 0, 0, 0.3);
+
+  text-align: center;
+
+  position: relative;
+}
+
+#planTextinput {
+  text-align: center;
+}
+#planText {
+  margin: 20px;
+  border: 3px solid rgba(146, 168, 234, 0.3);
+  border-radius: 10px;
+
+  width: 45%;
+}
+#addButton {
   height: 20px;
   width: 6%;
 
   border-radius: 20px;
   border: none;
 
-  background-color: rgba(#aac9df, 0.452);
+  background-color: rgba(146, 168, 234);
+  transition: 0.3s;
+  color: white;
+  font-weight: 200;
+
+  cursor: pointer;
 }
 
-.plan > #addButton:hover {
-  background-color: rgba(#aac9df);
+#addButton:hover {
+  background-color: rgba(146, 168, 234, 0.4);
+}
+#noPlantext {
+  text-align: center;
+  margin: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
 }
 
-#checkbox {
-  /* 설정값 */
+.planList {
+  position: relative;
+  height: 580px;
+  overflow-y: scroll;
 }
 
-#text {
+.planList::-webkit-scrollbar {
+  width: 10px;
 }
 
-#deleteButton {
+.planList::-webkit-scrollbar-thumb {
+  background-color: rgba(146, 168, 234, 0.2);
+  border-radius: 10px;
+
+  max-height: 10px;
 }
 
-#editButton {
+/* plan.js */
+#planItem {
+  width: 100%;
+  height: 30px;
+
+  background-color: transparent;
+
+  text-align: center;
+}
+
+#planItem > #deleteButton {
+  height: 20px;
+  width: 6%;
+
+  margin: 0 2px;
+  margin-left: 10px;
+  border-radius: 20px;
+  border: none;
+
+  background-color: rgba(146, 168, 234);
+  transition: 0.3s;
+  color: white;
+  font-weight: 200;
+
+  cursor: pointer;
+}
+
+#planItem > #deleteButton:hover {
+  background-color: rgba(146, 168, 234, 0.4);
+}
+
+#planItem > #editButton {
+  height: 20px;
+  width: 6%;
+
+  margin: 0 2px;
+
+  border-radius: 20px;
+  border: none;
+
+  background-color: rgba(146, 168, 234);
+  transition: 0.3s;
+  color: white;
+  font-weight: 200;
+
+  cursor: pointer;
+}
+
+#planItem > #editButton:hover {
+  background-color: rgba(146, 168, 234, 0.4);
+}
+
+#planItem > #planListText {
+  margin: 0 20px;
 }

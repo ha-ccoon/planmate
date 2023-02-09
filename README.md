@@ -1,3 +1,4 @@
+
 # 앨리스 IoT 트랙 1기 웹 프로젝트
 
 '플랜메이트'
@@ -39,7 +40,6 @@ JavaScript Node Express MongoDB Mongoose
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0"
 ```
-
 ## ERD
 
 ## Commit Convention
