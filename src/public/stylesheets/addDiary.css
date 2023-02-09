@@ -29,7 +29,7 @@
 .choose-feeling {
   width: 40px;
   height: 40px;
-  padding: 10px;
+  padding: 0 2%;
 }
 
 .write-diary {
@@ -55,6 +55,7 @@
   width: 100px;
   height: 40px;
   border-radius: 30px;
+  cursor: pointer;
 }
 
 #close-diary {
