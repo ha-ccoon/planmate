@@ -1,5 +1,13 @@
 /* plan(main.ejs) 파트*/
 
+.plan {
+  width: 100%;
+  height: 100%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+
 .content-box > .plan {
   width: 100%;
   height: 100%;
@@ -19,73 +27,80 @@
   border-radius: 20px;
 
   text-align: center;
-}
-.plan > #planText {
-  margin: 10px 0 0 0;
-  width: 70%;
-  height: 20px;
 
-  padding: 0 10px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 
   background-color: transparent;
-
-  border: none;
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-
-  text-align: center;
 }
 
-.plan > .planAdd {
-  margin: 15px;
-  width: 70%;
-  height: 620px;
-
-  padding: 0 10px;
-
-  background-color: transparent;
-
-  border: none;
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-
-  text-align: center;
-
-  overflow-y: auto;
-}
-
-.plan > input:focus {
+#planDate:focus {
   outline: none;
 }
+.plan > .planAdd {
+  height: 100%;
+  /* display: table; */
+  padding: 0 10px;
 
-.plan > #addButton {
+  background-color: transparent;
+
+  border: none;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+
+  text-align: center;
+
+  overflow-y: scroll;
+
+  position: relative;
+}
+
+#planTextinput {
+  text-align: center;
+}
+#planText {
+  border: 3px solid rgba(146, 168, 234, 0.3);
+  border-radius: 10px;
+}
+#addButton {
   height: 20px;
   width: 6%;
 
   border-radius: 20px;
   border: none;
 
-  background-color: rgba(#aac9df, 0.452);
+  background-color: rgba(146, 168, 234);
+  transition: 0.3s;
+
+  cursor: pointer;
 }
 
-.plan > #addButton:hover {
-  background-color: rgba(#aac9df);
+#addButton:hover {
+  background-color: rgba(146, 168, 234, 0.4);
+}
+#noPlantext {
+  text-align: center;
+  margin: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
 }
 
-/* plan.js 할 수 이따 */
+.planList {
+  position: relative;
+  height: 600px;
+  overflow-y: scroll;
+}
+
+/* plan.js */
 #planItem {
   width: 100%;
-  height: 50px;
-
-  padding: 0 10px;
+  height: 30px;
 
   background-color: transparent;
 
-  border: none;
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-
   text-align: center;
 
-  overflow-x: auto;
+  overflow-y: auto;
 }

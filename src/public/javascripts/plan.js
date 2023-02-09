@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       input.value = "";
       alert.textContent = "";
-    } else alert.textContent = "플랜이 입력되지 않았어요!";
+    } else alert.textContent = "혹쉬,, 플랜을 입력하지 않으셨나요?";
   };
 
   addButton.addEventListener("click", addTodo);
