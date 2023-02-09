@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* *****  HEADER  ***** */
+header {
+  width: 100%;
+  background-color: #e1eaf4;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-btn {
+  margin: 15px 50px;
+}
+
+header .header-btn #header-logo {
+  width: 100px;
+  height: 25px;
+}
+
+/* **** main **** */
+#logo-img {
+  margin: 0 auto;
+  width: 100px;
+  height: 30px;
+}
+
+#index-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 50px auto;
+  border: 1px solid black;
+  border-radius: 5%;
+  padding: 30px;
+  width: fit-content;
+}
+
+#local-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.aTag {
+  text-decoration: none;
+  color: #7a8b9f;
+}
+
+#google-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+input,
+#registerBtn {
+  height: 40px;
+}

@@ -32,13 +32,15 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
     <!-- fullcalendar 언어 CDN -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
-    <!-- <script type="text/javascript">
+    <!-- 뒤로가기 금지 -->
+    <script type="text/javascript">
       history.pushState(null, null, location.href); 
       window.onpopstate = function(event) { 
-        history.go(1); 
-    </script> -->
-  </head>
+        history.go(1)
+      };
+    </script>
 
+  </head>
   <body>
     <!-- 최상단 헤더 (로고 / 로그아웃 버튼) -->
     <header>
