@@ -1,10 +1,48 @@
-d# 앨리스 IoT 트랙 1기 웹 프로젝트 '플랜메이트' 입니다.
 
-# IA
+# 앨리스 IoT 트랙 1기 웹 프로젝트
 
-# ERD
+'플랜메이트'
 
-# Commit Convention
+![1675950240017](https://file+.vscode-resource.vscode-cdn.net/Users/minha/Documents/1-ongoing-project/planmate/image/README/1675950240017.png "Planmate Logo")
+
+#### 실천은 작은 것 부터! 데일리 플레너 플랜메이트
+
+플랜메이트로 당신의 하루를 계획 해보세요.
+
+## IA
+
+## Development Enviroment
+
+JavaScript Node Express MongoDB Mongoose
+
+## Model Diagram
+
+## Dependecies Module
+
+```
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.3",
+    "http-errors": "~1.6.3",
+    "mongoose": "^6.9.1",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0"
+```
+## ERD
+
+## Commit Convention
 
 | 태그이름   | 설명                                                              |
 | ---------- | ----------------------------------------------------------------- |
@@ -21,48 +59,10 @@ d# 앨리스 IoT 트랙 1기 웹 프로젝트 '플랜메이트' 입니다.
 | [DOCS]     | README나 WIKI 등의 문서 개정                                      |
 | [CORRECT]  | 주로 문법의 오류나 타입의 변경, 이름 변경에 사용                  |
 
-# Coding Convention
 
-## - 변수명
+## Developers
 
-    1. Lower Camel Case 사용
-    2. 함수의 경우 동사+명사 사용 ex) getInformation()
-    3. flag로 사용 되는 변수는 조동사 + flag 종류로 구성 ex) isNum
-    4. 약어는 사용하지 않는 것을 원칙으로 한다. 부득이하게 약어가 필요하다고 판단되는 경우 팀원과 상의를 거친다.
-
-## - Braket
-
-**한줄 if 문은 여러 줄로 작성한다.**
-
-```
-// 한줄 if 문 - 여러 줄로 작성
- if(trigger) {
-   return;
- }
-```
-
-**괄호는 한칸 띄우고 사용한다.**
-
-```
-// 괄호 사용 한칸 띄우고 사용한다.
- if (left == true) {
-    return;
- }
-```
-
-**Bracket 양쪽 사이를 띄어서 사용한다.**
-
-```
-// 띄어쓰기
- if (a == 5) { // 양쪽 사이로 띄어쓰기
-    return;
- }
-```
-
-## - 비동기 함수의 사용
-
-    1. async, await 함수 사용을 지향한다.
-    2. Promise 사용은 지양한다.
-    3. 다만 로직을 짜는 데 있어 promise를 불가피하게 사용할 경우, 주석으로 표시하고 commit에 그 이유를 작성한다.
-
--
+| 손민하 | 김정연 | 이경은 | 이가은 |
+| ------ | ------ | ------ | ------ |
+|        |        |        |        |
+|        |        |        |        |
