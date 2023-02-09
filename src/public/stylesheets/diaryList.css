@@ -54,9 +54,9 @@ main .content-box #diary-contents {
     width: calc(fit-content);
   }
   
-  main .content-box .diary-contents .diary .feelingcon-list {
+  /* main .content-box .diary-contents .diary .feelingcon-list {
     padding: 5px 30px 5px 15px;
-  }
+  } */
 
   main .content-box .diary-contents .diary-writer {
     font-size: 15px;
@@ -74,3 +74,15 @@ main .content-box #diary-contents {
   #close-diary {
     cursor: pointer;
   }
+
+  .feeling-list {
+    width: 10px;
+    height: 10px;
+  }
+
+  #feelingcon-preview {
+    display: block;
+    padding: 0 15px;
+    width: 25px;
+    height: 25px;
+}
