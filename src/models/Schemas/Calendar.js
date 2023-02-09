@@ -5,7 +5,7 @@ const crypto = require('crypto');
 
 const CalendarSchema = new Schema({
     title : { type: Number, required: true },
-    date: {
+    date : {
       type: Date,
       default: Date.now,
     }
