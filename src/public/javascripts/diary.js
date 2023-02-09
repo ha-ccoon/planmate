@@ -129,8 +129,8 @@ function addDiary () {
 
     //post 전송을 위한 form 생성
     const buttonForm = document.createElement('form');
-    buttonForm.action= '/main';
-    buttonForm.method="POST";
+    buttonForm.action= '/main/:diary';
+    buttonForm.method= "POST";
 
     //등록하기
     const uploadBtn= document.createElement('button');
@@ -244,7 +244,7 @@ function showSelectedDiary() {
     //일기 내용
     const comment= document.createElement('p');
     comment.id= 'comment';
-    comment.innerHTML= '정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.';
+    comment.innerHTML= `${db.comment.value}`;
 
     //edit div
     const editDiv= document.createElement('div');

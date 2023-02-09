@@ -124,7 +124,7 @@ router.get('/main', (req, res) => {
   res.render('main');
 });
 
-router.post('/main', (req, res, next) =>{ passport.authenticate('local', (err,user,info) => {
+router.post('/main:diary', (req, res, next) =>{ passport.authenticate('local', (err,user,info) => {
   console.log('inside post /main callback')
     req.login(user, async (err) => { 
     try {
