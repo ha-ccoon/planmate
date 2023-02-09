@@ -75,11 +75,13 @@
             <div class="plan">
               <!-- 0209 가은 할일 날짜 id 추가 -->
               <input type="date" id="planDate"/>
-              <span></span>
+      
               <div class="planAdd">
-
-                <input type="text" id="planText"/>
+                <div id="planTextinput">
+                <input type="text" id="planText" placeholder="플랜을 입력하세요"/>
                 <button id="addButton">추가</button>
+              </div>
+                <span id="noPlantext"></span>
                 <div class="planList" id="planList">
                   <!-- id=inputField에 할 일 입력 후 +버튼이 눌리면 할일이 나타날 공간 -->
                 </div>
