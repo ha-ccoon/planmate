@@ -140,10 +140,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
-      checkbox.id = "planCheckbox";
+      checkbox.id = "checkBox";
       // text
       const text = document.createElement("span");
-      text.id = "text";
+      text.id = "planListText";
       // 제거하기 버튼
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "삭제";
