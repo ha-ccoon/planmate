@@ -2,16 +2,16 @@
 
 /* 폰트 */
 @font-face {
-  font-family: 'NEXON Bold';
-  src: './font/NEXON Lv1 Gothic OTF Bold.otf';
+  font-family: "NEXON Bold";
+  src: url("../font/NEXON Lv1 Gothic OTF Bold.otf");
 }
 @font-face {
-  font-family: 'NEXON Light';
-  src: './font/NEXON Lv1 Gothic OTF Light.otf';
+  font-family: "NEXON Light";
+  src: url("../font/NEXON Lv1 Gothic OTF Light.otf");
 }
 @font-face {
-  font-family: 'NEXON';
-  src: './font/NEXON Lv1 Gothic OTF.otf';
+  font-family: "NEXON";
+  src: url("../font/NEXON Lv1 Gothic OTF.otf");
 }
 
 .plan {
@@ -31,6 +31,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "NEXON Bold";
 }
 
 .plan > #planDate {

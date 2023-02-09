@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 0209 가은 (캘린더 시간)
   const planDate = document.querySelector("#planDate");
-  
+
   // 0210 가은 캘린더에 넣는 리스트
   var calendarEvents = [];
 
@@ -15,14 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const addTodo = () => {
     const AddCalendarEvent = (title, today, tomorrow) => {
       if (title) {
-        calendarEvents.push(
-          {
-            title: title,
-            start: today,
-            end: tomorrow,
-            allDay: "true",
-          }
-        );
+        calendarEvents.push({
+          title: title,
+          start: today,
+          end: tomorrow,
+          allDay: "true",
+        });
       }
 
       var calendarEl = $("#calendar")[0];
@@ -109,14 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 체크박스 이벤트 리스너
 
-      checkbox.addEventListener("change", (event) => {
-        if (event.currentTarget.checked) {
-          // text.style.textDecoration = "line-through";
-        } else {
-          text.style.textDecoration = "none";
-          sort(); // 목록을 가장 밑으로 이동
-        }
-      });
+      // checkbox.addEventListener("change", (event) => {
+      //   if (event.currentTarget.checked) {
+      //     // text.style.textDecoration = "line-through";
+      //   } else {
+      //     text.style.textDecoration = "none";
+      //     sort(); // 목록을 가장 밑으로 이동
+      //   }
+      // });
 
       //수정하기
       editButton.addEventListener("click", (event) => {
