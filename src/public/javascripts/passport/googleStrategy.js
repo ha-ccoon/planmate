@@ -13,7 +13,7 @@ module.exports = () => {
         callbackURL: '/google/callback', // 구글 로그인 Redirect URI 경로
       },
       async (accessToken, refreshToken, profile, done) => {
-        // console.log('google profile : ', profile);
+        console.log('google profile : ', profile);
         try {
           const exUser = await User.findOne({
             // 구글 플랫폼에서 로그인 했고 & snsId필드에 구글 아이디가 일치할경우
