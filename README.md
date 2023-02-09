@@ -1,17 +1,19 @@
 
-# 앨리스 IoT 트랙 1기 웹 프로젝트
+# 앨리스 IoT 트랙 1기 웹 프로젝트 '플랜메이트'
 
-'플랜메이트'
+![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=capsule%20render&fontSize=90)
 
-![1675950240017](https://file+.vscode-resource.vscode-cdn.net/Users/minha/Documents/1-ongoing-project/planmate/image/README/1675950240017.png "Planmate Logo")
+![logo-kr](https://user-images.githubusercontent.com/86749331/217838246-c4855473-074b-44bf-b035-686bf06d3b26.png)
+
 
 #### 실천은 작은 것 부터! 데일리 플레너 플랜메이트
 
 플랜메이트로 당신의 하루를 계획 해보세요.
 
-## IA
+## Screen Flow Chart (화면흐름도)
 
 ## Development Enviroment
+<img src="https://img.shields.io/badge/JavaScript-yellow?style=flat&logo=JavaScript&logoColor=white"/>
 
 JavaScript Node Express MongoDB Mongoose
 
@@ -40,7 +42,6 @@ JavaScript Node Express MongoDB Mongoose
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0"
 ```
-## ERD
 
 ## Commit Convention
 
