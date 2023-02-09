@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const UserSchema = require("./Schemas/User");
 const CalendarSchema = require("./Schemas/Calendar");
 const DiarySchema = require("./Schemas/Diarys");
-const PlanSchema = require("./Schemas/Plans");
+const PlanSchema = require("./Schemas/Plan");
 
 // 참조 (모델 이름, 스키마, Collections 이름)
 exports.User = mongoose.model("User", UserSchema, "UserList");
