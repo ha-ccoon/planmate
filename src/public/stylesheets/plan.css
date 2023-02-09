@@ -40,18 +40,15 @@
 }
 .plan > .planAdd {
   height: 100%;
-  /* display: table; */
-  padding: 0 10px;
+  /* width: 85%;
+
+  padding: 10px; */
 
   background-color: transparent;
 
-  border: none;
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
+  border-top: 3px dotted rgba(0, 0, 0, 0.3);
 
   text-align: center;
-
-  overflow-y: scroll;
 
   position: relative;
 }
@@ -60,8 +57,11 @@
   text-align: center;
 }
 #planText {
+  margin: 20px;
   border: 3px solid rgba(146, 168, 234, 0.3);
   border-radius: 10px;
+
+  width: 45%;
 }
 #addButton {
   height: 20px;
@@ -72,6 +72,8 @@
 
   background-color: rgba(146, 168, 234);
   transition: 0.3s;
+  color: white;
+  font-weight: 200;
 
   cursor: pointer;
 }
@@ -89,8 +91,19 @@
 
 .planList {
   position: relative;
-  height: 600px;
+  height: 580px;
   overflow-y: scroll;
+}
+
+.planList::-webkit-scrollbar {
+  width: 10px;
+}
+
+.planList::-webkit-scrollbar-thumb {
+  background-color: rgba(146, 168, 234, 0.2);
+  border-radius: 10px;
+
+  max-height: 10px;
 }
 
 /* plan.js */
@@ -101,6 +114,50 @@
   background-color: transparent;
 
   text-align: center;
+}
 
-  overflow-y: auto;
+#planItem > #deleteButton {
+  height: 20px;
+  width: 6%;
+
+  margin: 0 2px;
+  margin-left: 10px;
+  border-radius: 20px;
+  border: none;
+
+  background-color: rgba(146, 168, 234);
+  transition: 0.3s;
+  color: white;
+  font-weight: 200;
+
+  cursor: pointer;
+}
+
+#planItem > #deleteButton:hover {
+  background-color: rgba(146, 168, 234, 0.4);
+}
+
+#planItem > #editButton {
+  height: 20px;
+  width: 6%;
+
+  margin: 0 2px;
+
+  border-radius: 20px;
+  border: none;
+
+  background-color: rgba(146, 168, 234);
+  transition: 0.3s;
+  color: white;
+  font-weight: 200;
+
+  cursor: pointer;
+}
+
+#planItem > #editButton:hover {
+  background-color: rgba(146, 168, 234, 0.4);
+}
+
+#planItem > #planListText {
+  margin: 0 20px;
 }
