@@ -1,6 +1,6 @@
-/* plan 파트*/
+/* plan(main.ejs) 파트*/
 
-.plan {
+.content-box > .plan {
   width: 100%;
   height: 100%;
   padding: 0 0 0 0;
@@ -11,7 +11,16 @@
   justify-content: center;
 }
 
-.plan > input {
+.plan > #planDate {
+  width: 50%;
+  cursor: pointer;
+  margin: 20px;
+  border: 3px solid rgba(146, 168, 234, 0.3);
+  border-radius: 20px;
+
+  text-align: center;
+}
+.plan > #planText {
   margin: 10px 0 0 0;
   width: 70%;
   height: 20px;
@@ -45,9 +54,9 @@
   overflow-y: auto;
 }
 
-/* .plan > input:focus {
+.plan > input:focus {
   outline: none;
-} */
+}
 
 .plan > #addButton {
   height: 20px;
@@ -63,15 +72,20 @@
   background-color: rgba(#aac9df);
 }
 
-#checkbox {
-  /* 설정값 */
-}
+/* plan.js 할 수 이따 */
+#planItem {
+  width: 100%;
+  height: 50px;
 
-#text {
-}
+  padding: 0 10px;
 
-#deleteButton {
-}
+  background-color: transparent;
 
-#editButton {
+  border: none;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+
+  text-align: center;
+
+  overflow-x: auto;
 }
