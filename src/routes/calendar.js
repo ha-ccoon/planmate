@@ -3,7 +3,7 @@
 
 const express = require('express');
 const bcrypt = require('express');
-const { Calendar } = require('../../models');
+const { Calendar } = require('../models');
 const router = express.Router();
 
 router.post('/calendar', async (req, res, next) => {

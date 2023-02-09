@@ -1,7 +1,7 @@
 //@ 로그인이 성공했을 때,
 'use strict';
 const passport = require('passport');
-const local = require('./localStrategy'); // 로컬 서버 로그인
+const local = require('./LocalStrategy'); // 로컬 서버 로그인
 const google = require('./googleStrategy'); // 구글 로그인
 const { User } = require('../../../models');
 
