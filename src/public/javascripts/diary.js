@@ -184,6 +184,7 @@ function addDiary () {
         feel3.src="./images/feel-notbad-2.png";
         feel4.src="./images/feel-sad-2.png";
         feel5.src="./images/feel-angry-2.png";
+
         feelDiv.name= {'feelingconURL': "./images/feel-love.png"}
         console.log(feelDiv.name);
         // console.log(feelDiv.value);
