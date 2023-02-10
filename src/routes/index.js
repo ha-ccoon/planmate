@@ -13,6 +13,7 @@ const { Plan } = require("../models");
 const { calendarInfo } = require("os");
 const { isLoggedIn, isNotLoggedIn } = require("./passport/logInStatus");
 
+
 //@ localhost:3000
 router.get("/", (req, res) => {
   res.render("index");
@@ -121,8 +122,17 @@ router.post("/calendar", async (req, res) => {
 });
 
 //@ localhost:3000/main
-router.get("/main", (req, res) => {
-  res.render("main");
+router.get('/main', (req, res) => {
+  Diary.find({}, function(err, result) {
+    res.render('main');
+  })
+  res.render('main')
+});
+
+router.get('/main/:diary', (req, res) => {
+  Diary.find({}, function(err, result) {
+    res.send({data: result});
+  })
 });
 
 router.post("/main", (req, res, next) => {
@@ -146,7 +156,12 @@ router.post("/main", (req, res, next) => {
       }
     });
   })(req, res, next);
+  // next()
 });
+
+// 이 부분 플랜으로 작성하면 됨~
+// router.post("/main", (req, res, next) => {
+// });
 
 router.get("/checkauth", isNotLoggedIn, function (req, res) {
   res.status(200).json({
