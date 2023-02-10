@@ -125,21 +125,12 @@ router.get("/main", (req, res) => {
   res.render("main");
 });
 
-<<<<<<< HEAD
-router.post('/main', (req, res, next) => {
-  passport.authenticate('local', (err, user, info) => {
-    console.log('inside post /main callback');
-    req.login(user, async (err) => {
-      try {
-        console.log('try');
-=======
 router.post("/main", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     console.log("inside post /main callback");
     req.login(user, async (err) => {
       try {
         console.log("try");
->>>>>>> dev
         const { writer, written_date, comment, feelingconURL } = req.body;
         const diaryInfo = await Diary.create({
           writer, //user.firstName
@@ -149,29 +140,17 @@ router.post("/main", (req, res, next) => {
         });
         console.log(passport.session()); //isLoggedIn,
         diaryInfo.save();
-<<<<<<< HEAD
-        console.log('diary 내용이 저장됨');
-      } catch (err) {
-        console.log('diary 저장 실패');
-=======
         console.log("diary 내용이 저장됨");
       } catch (err) {
         console.log("diary 저장 실패");
->>>>>>> dev
       }
     });
   })(req, res, next);
 });
 
-<<<<<<< HEAD
-router.get('/checkauth', isNotLoggedIn, function (req, res) {
-  res.status(200).json({
-    status: 'Login successful!',
-=======
 router.get("/checkauth", isNotLoggedIn, function (req, res) {
   res.status(200).json({
     status: "Login successful!",
->>>>>>> dev
   });
 
   console.log(req.isAuthenticated());
