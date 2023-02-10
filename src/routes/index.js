@@ -12,6 +12,7 @@ const { Diary } = require('../models');
 const { calendarInfo } = require('os');
 const { isLoggedIn, isNotLoggedIn } = require('./passport/logInStatus');
 
+
 //@ localhost:3000
 router.get('/', (req, res) => {
   res.render('index');
@@ -121,30 +122,45 @@ router.post('/calendar', async (req, res) => {
 
 //@ localhost:3000/main
 router.get('/main', (req, res) => {
-  res.render('main');
+  Diary.find({}, function(err, result) {
+    res.render('main');
+  })
+  res.render('main')
 });
 
-router.post('/main:diary', (req, res, next) =>{ passport.authenticate('local', (err,user,info) => {
-  console.log('inside post /main callback')
-    req.login(user, async (err) => { 
-    try {
-      console.log("try")
-      const { writer, written_date, comment, feelingconURL } = req.body;
-      const diaryInfo = await Diary.create({
-        writer, //user.firstName
-        written_date, 
-        comment,
-        feelingconURL
-      });
-      console.log(passport.session()); //isLoggedIn,
-      diaryInfo.save();
-      console.log('diary 내용이 저장됨');
-    } catch (err) {
-      console.log('diary 저장 실패');
-    }
-})})(req, res, next)}
-  
-  )
+router.get('/main/:diary', (req, res) => {
+  Diary.find({}, function(err, result) {
+    res.send({data: result});
+  })
+});
+
+router.post("/main", (req, res, next) => {
+  passport.authenticate("local", (err, user, info) => {
+    console.log("inside post /main callback");
+    req.login(user, async (err) => {
+      try {
+        console.log("try");
+        const { writer, written_date, comment, feelingconURL } = req.body;
+        const diaryInfo = await Diary.create({
+          writer, //user.firstName
+          written_date,
+          comment,
+          feelingconURL,
+        });
+        console.log(passport.session()); //isLoggedIn,
+        diaryInfo.save();
+        console.log("diary 내용이 저장됨");
+      } catch (err) {
+        console.log("diary 저장 실패");
+      }
+    });
+  })(req, res, next);
+  // next()
+});
+
+// 이 부분 플랜으로 작성하면 됨~
+// router.post("/main", (req, res, next) => {
+// });
 
 router.get('/checkauth', isNotLoggedIn, function(req, res){
 

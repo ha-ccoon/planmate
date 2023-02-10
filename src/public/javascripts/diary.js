@@ -6,15 +6,11 @@ let addDiaryBtn = document.getElementById('add-diary');
 let diarySelectBtn = document.getElementById('diary-writer');
 let goToListBtn= document.getElementById('close-diary');
 
-//기분 이모티콘 주소값
-let feelingconURL= "";
-feelingconURL.name="feelingconURL";
-
 //다이어리 목록 띄우기 
 function listUp () {
-     planElem.innerHTML="";
+    planElem.innerHTML="";
     diaryElem.innerHTML="";
-
+    
     //diaryDiv
     const newDiaryDiv= document.createElement('div');
     newDiaryDiv.classList.add('diaryDiv');
@@ -30,9 +26,14 @@ function listUp () {
     feedTitle.innerHTML= "피드";
     feedTitle.classList.add('diary-feed');
 
+
+    // for(let d=0; d < mytext.data[0].length; d++) {
+    
+    // }
     //피드 날짜
     const diaryDate= document.createElement('p');
-    diaryDate.innerHTML="2023.02.06(월)";
+    diaryDate.innerHTML=`2023-02-10 (금)`;
+    // ${mytext.data[0].written_date}
     diaryDate.classList.add('diary-date');
 
     //다이어리 리스트 ol
@@ -51,7 +52,7 @@ function listUp () {
 
     //다이어리 작성자
     const diaryWriter = document.createElement('p');
-    diaryWriter.innerHTML= "의 다이어리";
+    diaryWriter.innerHTML= `'User_firstName'의 다이어리`;
     diaryWriter.classList.add("diary-writer");
     diaryWriter.id='diary-writer';
 
@@ -89,13 +90,23 @@ function addDiary () {
     backBtn.id= 'close-diary'; 
 
     //오늘 날짜
+    let today = new Date();   
+    let year = today.getFullYear(); // 년도
+    let month = today.getMonth() + 1;  // 월
+    let date = today.getDate();  // 날짜
+    let day = today.getDay();  // 요일
+    const dayArray = ['일', '월', '화', '수', '목', '금', '토'];
+    let textday = dayArray[day];
+
+
     const todayDate= document.createElement('p');
-    todayDate.innerHTML= "2022-01-07";
+    todayDate.innerHTML= `${year}-${month}-${date} (${textday})`;
     todayDate.classList.add('today-date'); 
 
     //기분 div 
     const feelDiv= document.createElement('div');
     feelDiv.id= 'select-feeling';
+    feelDiv.name="feelingconURL";
 
     //기분 고르기
     const feel1= document.createElement('img');
@@ -129,7 +140,7 @@ function addDiary () {
 
     //post 전송을 위한 form 생성
     const buttonForm = document.createElement('form');
-    buttonForm.action= '/main/:diary';
+    buttonForm.action= '/main';
     buttonForm.method= "POST";
 
     //등록하기
@@ -156,16 +167,14 @@ function addDiary () {
     diaryElem.append(addDiaryDiv);
     
     //기분 선택 시 나머지 흑백처리
-    let feelingconURL= "";
-
     feel1.addEventListener('click', ()=> {
         feel1.src="./images/feel-love.png";
         feel2.src="./images/feel-happy-2.png";
         feel3.src="./images/feel-notbad-2.png";
         feel4.src="./images/feel-sad-2.png";
         feel5.src="./images/feel-angry-2.png";
-        feelingconURL= "./images/feel-love.png";
-        console.log(feelingconURL);
+        feelDiv.value= "./images/feel-love.png";
+        console.log('feel love');
     });
 
     feel2.addEventListener('click', ()=> {
@@ -174,8 +183,8 @@ function addDiary () {
         feel3.src="./images/feel-notbad-2.png";
         feel4.src="./images/feel-sad-2.png";
         feel5.src="./images/feel-angry-2.png";
-        feelingconURL= "./images/feel-happy.png";
-        console.log(feelingconURL);
+        feelDiv.value= "./images/feel-happy.png";
+        console.log('feel happy');
     });
 
     feel3.addEventListener('click', ()=> {
@@ -184,8 +193,8 @@ function addDiary () {
         feel3.src="./images/feel-notbad.png";
         feel4.src="./images/feel-sad-2.png";
         feel5.src="./images/feel-angry-2.png";
-        feelingconURL= "./images/feel-notbad.png";
-        console.log(feelingconURL);
+        feelDiv.value= "./images/feel-notbad.png";
+        console.log('feel notbad');
     });
 
     feel4.addEventListener('click', ()=> {
@@ -194,8 +203,8 @@ function addDiary () {
         feel3.src="./images/feel-notbad-2.png";
         feel4.src="./images/feel-sad.png";
         feel5.src="./images/feel-angry-2.png";
-        feelingconURL= "./images/feel-sad.png";
-        console.log(feelingconURL);
+        feelDiv.value= "./images/feel-sad.png";
+        console.log('feel sad');
     });
 
     feel5.addEventListener('click', ()=> {
@@ -204,8 +213,8 @@ function addDiary () {
         feel3.src="./images/feel-notbad-2.png";
         feel4.src="./images/feel-sad-2.png";
         feel5.src="./images/feel-angry.png";
-        feelingconURL= "./images/feel-angry.png";
-        console.log(feelingconURL);
+        feelDiv.value= "./images/feel-angry.png";
+        console.log('feel angry');
     });
 
     //리스트로 돌아가기
@@ -244,7 +253,7 @@ function showSelectedDiary() {
     //일기 내용
     const comment= document.createElement('p');
     comment.id= 'comment';
-    comment.innerHTML= `${db.comment.value}`;
+    comment.innerHTML= `어쩌구저쩌구`;
 
     //edit div
     const editDiv= document.createElement('div');
@@ -276,8 +285,6 @@ function showSelectedDiary() {
     //리스트로 돌아가기
     goToListBtn= document.getElementById('close-diary');
     goToListBtn.addEventListener('click', listUp);
-    
-    planBtn.addEventListener('click',addTodo);
 }
 
 //다이어리 전송 alert
@@ -287,4 +294,12 @@ function sendDiary () {
         listUp();
       }, "100")
     // listUp();
+
+    async function dbDiary() {
+        const response = await fetch("/main/:diary")
+        const mytext = await response.json()
+        //console.log(mytext.data[0])
+    }
+
+    dbDiary()
 }
