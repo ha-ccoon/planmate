@@ -6,6 +6,10 @@ let addDiaryBtn = document.getElementById('add-diary');
 let diarySelectBtn = document.getElementById('diary-writer');
 let goToListBtn= document.getElementById('close-diary');
 
+//기분 이모티콘 주소값
+let feelingconURL= "";
+feelingconURL.name="feelingconURL";
+
 //다이어리 목록 띄우기 
 function listUp () {
      planElem.innerHTML="";
@@ -42,11 +46,12 @@ function listUp () {
     //다이어리 기분 아이콘
     const feelingcon= document.createElement('img');
     feelingcon.classList.add('feeling-list');
-    feelingcon.src= "./images/config-2" + ".png";
+    feelingcon.id= 'feelingcon-preview';
+    feelingcon.src= "./images/feel-happy" + ".png";
 
     //다이어리 작성자
     const diaryWriter = document.createElement('p');
-    diaryWriter.innerHTML= "이경은의 다이어리";
+    diaryWriter.innerHTML= "의 다이어리";
     diaryWriter.classList.add("diary-writer");
     diaryWriter.id='diary-writer';
 
@@ -94,21 +99,26 @@ function addDiary () {
 
     //기분 고르기
     const feel1= document.createElement('img');
-    feel1.src= "./images/feel-love" + ".png";
+    feel1.src= "./images/feel-love.png";
     const feel2= document.createElement('img');
-    feel2.src= "./images/feel-happy" + ".png";
+    feel2.src= "./images/feel-happy.png";
     const feel3= document.createElement('img');
-    feel3.src= "./images/feel-notbad" + ".png";
+    feel3.src= "./images/feel-notbad.png";
     const feel4= document.createElement('img');
-    feel4.src= "./images/feel-sad" + ".png";
+    feel4.src= "./images/feel-sad.png";
     const feel5= document.createElement('img');
-    feel5.src= "./images/feel-angry" + ".png";
+    feel5.src= "./images/feel-angry.png";
     
     feel1.classList.add('choose-feeling');
-    feel2.classList.add('choose-feeling'); 
+    feel1.id='feel1';
+    feel2.classList.add('choose-feeling');
+    feel2.id='feel2'; 
     feel3.classList.add('choose-feeling'); 
+    feel3.id='feel3';
     feel4.classList.add('choose-feeling'); 
+    feel4.id='feel4';
     feel5.classList.add('choose-feeling');
+    feel5.id='feel5';
 
     //다이어리 내용 작성하는 곳
     const textingArea = document.createElement('textarea');
@@ -119,8 +129,8 @@ function addDiary () {
 
     //post 전송을 위한 form 생성
     const buttonForm = document.createElement('form');
-    buttonForm.action= '/main';
-    buttonForm.method="POST";
+    buttonForm.action= '/main/:diary';
+    buttonForm.method= "POST";
 
     //등록하기
     const uploadBtn= document.createElement('button');
@@ -144,11 +154,64 @@ function addDiary () {
     addDiaryDiv.append(buttonForm);
 
     diaryElem.append(addDiaryDiv);
+    
+    //기분 선택 시 나머지 흑백처리
+    let feelingconURL= "";
+
+    feel1.addEventListener('click', ()=> {
+        feel1.src="./images/feel-love.png";
+        feel2.src="./images/feel-happy-2.png";
+        feel3.src="./images/feel-notbad-2.png";
+        feel4.src="./images/feel-sad-2.png";
+        feel5.src="./images/feel-angry-2.png";
+        feelingconURL= "./images/feel-love.png";
+        console.log(feelingconURL);
+    });
+
+    feel2.addEventListener('click', ()=> {
+        feel1.src="./images/feel-love-2.png";
+        feel2.src="./images/feel-happy.png";
+        feel3.src="./images/feel-notbad-2.png";
+        feel4.src="./images/feel-sad-2.png";
+        feel5.src="./images/feel-angry-2.png";
+        feelingconURL= "./images/feel-happy.png";
+        console.log(feelingconURL);
+    });
+
+    feel3.addEventListener('click', ()=> {
+        feel1.src="./images/feel-love-2.png";
+        feel2.src="./images/feel-happy-2.png";
+        feel3.src="./images/feel-notbad.png";
+        feel4.src="./images/feel-sad-2.png";
+        feel5.src="./images/feel-angry-2.png";
+        feelingconURL= "./images/feel-notbad.png";
+        console.log(feelingconURL);
+    });
+
+    feel4.addEventListener('click', ()=> {
+        feel1.src="./images/feel-love-2.png";
+        feel2.src="./images/feel-happy-2.png";
+        feel3.src="./images/feel-notbad-2.png";
+        feel4.src="./images/feel-sad.png";
+        feel5.src="./images/feel-angry-2.png";
+        feelingconURL= "./images/feel-sad.png";
+        console.log(feelingconURL);
+    });
+
+    feel5.addEventListener('click', ()=> {
+        feel1.src="./images/feel-love-2.png";
+        feel2.src="./images/feel-happy-2.png";
+        feel3.src="./images/feel-notbad-2.png";
+        feel4.src="./images/feel-sad-2.png";
+        feel5.src="./images/feel-angry.png";
+        feelingconURL= "./images/feel-angry.png";
+        console.log(feelingconURL);
+    });
 
     //리스트로 돌아가기
     goToListBtn= document.getElementById('close-diary');
     goToListBtn.addEventListener('click', listUp);
-    // uploadBtn.addEventListener('click', sendDiary);
+    uploadBtn.addEventListener('click', sendDiary);
 }
 
 //등록된 다이어리 세부
@@ -181,7 +244,7 @@ function showSelectedDiary() {
     //일기 내용
     const comment= document.createElement('p');
     comment.id= 'comment';
-    comment.innerHTML= '정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.정말 정말 재밌었다.';
+    comment.innerHTML= `${db.comment.value}`;
 
     //edit div
     const editDiv= document.createElement('div');
@@ -217,6 +280,11 @@ function showSelectedDiary() {
     planBtn.addEventListener('click',addTodo);
 }
 
-// function sendDiary () {
-//     alert('새로운 일기 등록 완료!')
-// }
+//다이어리 전송 alert
+function sendDiary () {
+    alert('새로운 일기 등록 완료!');
+    setTimeout(() => {
+        listUp();
+      }, "100")
+    // listUp();
+}

@@ -1,3 +1,17 @@
+/* 폰트 */
+@font-face {
+  font-family: 'NEXON Bold';
+  src: './font/NEXON Lv1 Gothic OTF Bold.otf';
+}
+@font-face {
+  font-family: 'NEXON Light';
+  src: './font/NEXON Lv1 Gothic OTF Light.otf';
+}
+@font-face {
+  font-family: 'NEXON';
+  src: './font/NEXON Lv1 Gothic OTF.otf';
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +43,7 @@
 .choose-feeling {
   width: 40px;
   height: 40px;
-  padding: 10px;
+  padding: 0 2%;
 }
 
 .write-diary {
@@ -55,6 +69,7 @@
   width: 100px;
   height: 40px;
   border-radius: 30px;
+  cursor: pointer;
 }
 
 #close-diary {

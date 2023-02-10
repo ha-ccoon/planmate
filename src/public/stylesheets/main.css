@@ -1,3 +1,17 @@
+/* 폰트 */
+@font-face {
+  font-family: 'NEXON Bold';
+  src: './font/NEXON Lv1 Gothic OTF Bold.otf';
+}
+@font-face {
+  font-family: 'NEXON Light';
+  src: './font/NEXON Lv1 Gothic OTF Light.otf';
+}
+@font-face {
+  font-family: 'NEXON';
+  src: './font/NEXON Lv1 Gothic OTF.otf';
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -74,13 +88,13 @@ main #content-holder #material-holder {
   height: 800px;
 }
 
-main .content-box nav ul {
+main .content-box .material-nav ul {
   padding: 20px 50px;
   display: flex;
   background-color: #8b9fb7;
 }
 
-main .content-box nav li {
+main .content-box .material-nav li {
   padding: 0 100px;
   width: 100px;
   color: #e0e8f2;
