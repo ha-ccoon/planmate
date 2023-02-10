@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* *****  HEADER  ***** */
+header {
+  width: 100%;
+  background-color: #e1eaf4;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-btn {
+  margin: 15px 50px;
+}
+
+header .header-btn #header-logo {
+  width: 100px;
+  height: 25px;
+}
+
+#logo-img {
+  margin: 0 auto;
+  width: 100px;
+  height: 30px;
+}
+
+#register-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 50px auto;
+  border: 1px solid black;
+  border-radius: 5%;
+  padding: 30px;
+  width: fit-content;
+}
+
+h3 {
+  margin: 0 auto 10px;
+}
+
+#email-input {
+  width: 370px;
+}
+
+input {
+  height: 40px;
+}
+
+#fullName,
+#password-container,
+#phone-birth-container {
+  display: flex;
+}
+
+#passwordConfirm,
+#lastName,
+#birthDay {
+  margin-left: 10px;
+}
+
+#birthDay {
+  margin-bottom: 20px;
+}
+
+#birthDay input {
+  width: 182px;
+}
