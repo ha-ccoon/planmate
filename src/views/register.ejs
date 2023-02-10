@@ -4,31 +4,79 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
+    <title>플랜메이트</title>
+    <link rel="stylesheet" href="stylesheets/register.css" />
+    <link
+      href="https://i.imgur.com/K8B2Pvy.png"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css
+   "
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css
+   "
+      defer
+    ></script>
   </head>
+  <!-- 최상단 헤더 -->
+  <header>
+    <nav id="header">
+      <div class="header-btn">
+        <img id="header-logo" src="images/logo-en.png" alt="logo button" />
+      </div>
+    </nav>
+  </header>
+
   <body>
-    <h1>Register</h1>
-    <form action="/register" method="POST">
-      <fieldset>
-        <input type="text" name="email" placeholder="Email" /><br />
-        <input type="password" name="password" placeholder="Password" /><br />
-        <input
-          type="password"
-          name="passwordConfirm"
-          placeholder="PasswordConfirm"
-        /><br />
-        <div id="firstName">
-          <input type="text" name="firstName" placeholder="First Name" /><br />
+    <div id="register-container">
+      <img id="logo-img" src="images/logo-en.png" alt="logo" />
+      <br />
+      <h3>회원가입</h3>
+      <form action="/register" method="POST">
+        <label for="email">이메일</label><br />
+        <input id="email-input" type="text" name="email" /><br />
+        <br />
+        <div id="password-container">
+          <div id="password">
+            <label for="password">비밀번호</label><br />
+            <input type="password" name="password" />
+          </div>
+          <br />
+          <div id="passwordConfirm">
+            <label for="passwordConfirm">비밀번호 확인</label><br />
+            <input type="password" name="passwordConfirm" />
+          </div>
         </div>
-        <div id="lastName">
-          <input type="text" name="lastName" placeholder="Last Name" /><br />
+        <br />
+        <div id="fullName">
+          <div id="firstName">
+            <label for="firstName">이름</label><br />
+            <input type="text" name="firstName" /><br />
+          </div>
+          <div id="lastName">
+            <label for="lastName">성</label><br />
+            <input type="text" name="lastName" /><br />
+            <br />
+          </div>
         </div>
         <!-- 국가코드 -->
-        <input type="tel" placeholder="Phone Number" name="phoneNumber" /><br />
-        <label for="birthDay">Date of Birth</label><br />
-        <input type="date" name="birthDay" />
-        <button type="submit">Register</button>
-      </fieldset>
-    </form>
+        <div id="phone-birth-container">
+          <div id="phoneNumber">
+            <label for="phoneNumber">핸드폰 (선택)</label><br />
+            <input type="tel" placeholder="Phone Number" name="phoneNumber" />
+          </div>
+          <div id="birthDay">
+            <label for="birthDay">생일 (선택)</label><br />
+            <input type="date" name="birthDay" /><br />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-secondary">회원가입 하기</button>
+      </form>
+    </div>
   </body>
 </html>

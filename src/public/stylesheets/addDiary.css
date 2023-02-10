@@ -46,6 +46,21 @@
   padding: 0 2%;
 }
 
+input[type="checkbox"]+label {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url('../images/feel-love-2.png') no-repeat 0 0px / contain;
+}
+
+input[type='checkbox']:checked+label {
+  background: url('../images/feel-love.png') no-repeat 0 1px / contain;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
 .write-diary {
   display: block;
   align-self: center;

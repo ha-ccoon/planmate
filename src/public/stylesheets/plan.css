@@ -31,6 +31,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "NEXON Bold";
 }
 
 .plan > #planDate {
@@ -127,7 +128,8 @@
 
   background-color: transparent;
 
-  text-align: center;
+  text-align: left;
+  margin-left: 110px;
 }
 
 #planItem > #deleteButton {
@@ -139,7 +141,7 @@
   border-radius: 20px;
   border: none;
 
-  background-color: rgba(146, 168, 234);
+  background-color: rgb(133, 149, 198);
   transition: 0.3s;
   color: white;
   font-weight: 200;
@@ -148,7 +150,7 @@
 }
 
 #planItem > #deleteButton:hover {
-  background-color: rgba(146, 168, 234, 0.4);
+  background-color: rgb(133, 149, 198, 0.4);
 }
 
 #planItem > #editButton {
@@ -160,7 +162,7 @@
   border-radius: 20px;
   border: none;
 
-  background-color: rgba(146, 168, 234);
+  background-color: rgb(133, 149, 198);
   transition: 0.3s;
   color: white;
   font-weight: 200;
@@ -169,7 +171,7 @@
 }
 
 #planItem > #editButton:hover {
-  background-color: rgba(146, 168, 234, 0.4);
+  background-color: rgb(133, 149, 198, 0.4);
 }
 
 #planItem > #planListText {

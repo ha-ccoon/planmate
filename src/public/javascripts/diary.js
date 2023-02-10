@@ -106,9 +106,20 @@ function addDiary () {
     //기분 div 
     const feelDiv= document.createElement('div');
     feelDiv.id= 'select-feeling';
-    feelDiv.name="feelingconURL";
+    feelDiv.name='feelingconURL';
+    // console.log(feelDiv.name);
 
     //기분 고르기
+    // const feel1= document.createElement('input');
+    // feel1.id= 'feel1';
+    // feel1.type="checkbox";
+    // const feel1_label= document.createElement('label');
+    // feel1_label.for= 'feel1';
+
+    // const feel1Div = document.createElement('div');
+    // feel1Div.append(feel1);
+    // feel1Div.append(feel1_label);
+
     const feel1= document.createElement('img');
     feel1.src= "./images/feel-love.png";
     const feel2= document.createElement('img');
@@ -173,8 +184,9 @@ function addDiary () {
         feel3.src="./images/feel-notbad-2.png";
         feel4.src="./images/feel-sad-2.png";
         feel5.src="./images/feel-angry-2.png";
-        feelDiv.value= "./images/feel-love.png";
-        console.log('feel love');
+        feelDiv.name= {'feelingconURL': "./images/feel-love.png"}
+        console.log(feelDiv.name);
+        // console.log(feelDiv.value);
     });
 
     feel2.addEventListener('click', ()=> {
@@ -184,7 +196,7 @@ function addDiary () {
         feel4.src="./images/feel-sad-2.png";
         feel5.src="./images/feel-angry-2.png";
         feelDiv.value= "./images/feel-happy.png";
-        console.log('feel happy');
+        // console.log('feel happy');
     });
 
     feel3.addEventListener('click', ()=> {
@@ -194,7 +206,7 @@ function addDiary () {
         feel4.src="./images/feel-sad-2.png";
         feel5.src="./images/feel-angry-2.png";
         feelDiv.value= "./images/feel-notbad.png";
-        console.log('feel notbad');
+        // console.log('feel notbad');
     });
 
     feel4.addEventListener('click', ()=> {
@@ -204,7 +216,7 @@ function addDiary () {
         feel4.src="./images/feel-sad.png";
         feel5.src="./images/feel-angry-2.png";
         feelDiv.value= "./images/feel-sad.png";
-        console.log('feel sad');
+        // console.log('feel sad');
     });
 
     feel5.addEventListener('click', ()=> {
@@ -214,7 +226,7 @@ function addDiary () {
         feel4.src="./images/feel-sad-2.png";
         feel5.src="./images/feel-angry.png";
         feelDiv.value= "./images/feel-angry.png";
-        console.log('feel angry');
+        // console.log('feel angry');
     });
 
     //리스트로 돌아가기
@@ -303,3 +315,4 @@ function sendDiary () {
 
     dbDiary()
 }
+
