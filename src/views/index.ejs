@@ -4,37 +4,76 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <link rel="stylesheet" href="stylesheets/index.css" />
+    <link
+      href="https://i.imgur.com/K8B2Pvy.png"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css
+    ">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css
+    " defer></script>
+    <!-- fonta -->
+    <script src="https://kit.fontawesome.com/5ae30e70ac.js" crossorigin="anonymous"></script>
+      <!--
+      뒤로가기
+      금지
+      -->
+    <script type="text/javascript">
+      history.pushState(null, null, location.href);
+      window.onpopstate = function (event) {
+        history.go(1);
+      };
+    </script>
+    <title>플랜메이트</title>
   </head>
-  <body>
-    <h1>Welcome to Planmate!</h1>
-    <h2>Sign in</h2>
-    <form action="/" method="POST">
-      <fieldset>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          autocomplete="on"
-          required
-        /><br />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          autocomplete="off"
-          required
-        /><br />
-        <button type="submit" id="login">Login</button><br />
-        <button type="button" onclick='location.href="register"'>
-          Create Account</button
-        ><br />
 
-        <a href="#">Forgot your Email or Password?</a>
-      </fieldset>
-    </form>
-    <form action="/google" method="GET">
-      <button type="submit">Sign in with Google</button><br />
-    </form>
+  <body>
+    <!-- 최상단 헤더 -->
+    <header>
+      <nav id="header">
+        <div class="header-btn">
+          <img id="header-logo" src="images/logo-en.png" alt="logo button" />
+        </div>
+      </nav>
+    </header>
+
+    <div id="index-container">
+      <img id="logo-img" src="images/logo-en.png" alt="logo" />
+      <br />
+      <div>
+        <form id="local-form" action="/" method="POST">
+          <label for="email">이메일</label>
+          <input
+            type="email"
+            name="email"
+            autocomplete="on"
+            required
+          />
+          <br />
+          <label for="password">비밀번호</label>
+          <input
+            type="password"
+            name="password"
+            autocomplete="off"
+            required
+          />
+          <br />
+          <button type="submit" class="btn btn-secondary">로그인</button>
+          </form>
+          <form id="google-form" action="/google" method="GET">
+            <button id="registerBtn" type="submit" class="btn btn-secondary"><i class="fa-brands fa-google"></i></i> 구글로 로그인 하기</button>
+          
+          </form>
+          <span>아직 계정이 없으신가요? </span><a class="aTag" href="/register">회원가입</a>
+         
+          <br/>
+        <a class="aTag" href="#">비밀번호를 잊어버리셨나요?</a>
+      </div>
+    </div>
   </body>
 </html>
